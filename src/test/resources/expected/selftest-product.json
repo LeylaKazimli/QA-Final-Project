@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "title": "@string",
+  "category": "beauty",
+  "price": "@number",
+  "tags": ["beauty", "@string"],
+  "dimensions": { "width": "@number", "height": "@number" },
+  "reviews": [ { "rating": "@number", "comment": "@notEmpty", "reviewerEmail": "@regex:^[^@]+@[^@]+$" } ],
+  "meta": { "barcode": "@regex:^\\d+$", "createdAt": "@ignore" },
+  "sku": "@contains:ESS"
+}

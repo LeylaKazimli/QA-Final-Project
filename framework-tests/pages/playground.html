@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<title>Gauge Playground</title>
+<style>
+  body { font-family: sans-serif; margin: 20px; }
+  section { border: 1px solid #ccc; padding: 10px; margin-bottom: 12px; }
+  #hoverMenu, #delayed { display: none; }
+  #dragSrc, #dropTarget { display: inline-block; width: 120px; height: 60px; border: 2px dashed #888; margin: 8px; user-select: none; }
+  #dragSrc { background: #def; cursor: move; }
+  #spacer { height: 2500px; }
+</style>
+</head>
+<body>
+<h1 id="title">Playground</h1>
+
+<section id="form">
+  <input id="name" placeholder="Ad">
+  <input id="email" name="email" placeholder="Email">
+  <input id="password" type="password">
+  <input id="prefilled" value="hazır">
+  <select id="city">
+    <option value="baku">Bakı</option>
+    <option value="ganja">Gəncə</option>
+    <option value="sumqayit">Sumqayıt</option>
+  </select>
+  <label><input id="agree" type="checkbox"> Razıyam</label>
+  <button id="submitBtn" class="btn primary" onclick="document.getElementById('result').textContent='Salam, ' + document.getElementById('name').value + ' / ' + document.getElementById('city').value + ' / ' + document.getElementById('agree').checked">Göndər</button>
+  <button id="disabledBtn" disabled>Deaktiv</button>
+  <p id="result"></p>
+  <p id="keyResult"></p>
+</section>
+
+<section id="mouse">
+  <button id="dblBtn" ondblclick="document.getElementById('mouseResult').textContent='iki klik'">İki klik</button>
+  <div id="ctxArea" style="display:inline-block;padding:6px;background:#eee" oncontextmenu="event.preventDefault();document.getElementById('mouseResult').textContent='sag klik'">Sağ klik zonası</div>
+  <div id="hoverArea" style="display:inline-block;padding:6px;background:#ffe" onmouseover="document.getElementById('hoverMenu').style.display='block'">Üzərinə gəl</div>
+  <div id="hoverMenu">Gizli menyu</div>
+  <p id="mouseResult"></p>
+  <div id="dragSrc">Sürüklə</div>
+  <div id="dropTarget">Bura burax</div>
+  <p id="dropResult"></p>
+</section>
+
+<section id="list">
+  <ul>
+    <li class="item" onclick="sel(this)">Alma</li>
+    <li class="item" onclick="sel(this)">Armud</li>
+    <li class="item" onclick="sel(this)">Heyva</li>
+  </ul>
+  <p id="itemResult"></p>
+  <a id="docLink" href="#docs" onclick="document.getElementById('itemResult').textContent='link'">Sənədlər</a>
+  <button onclick="document.getElementById('itemResult').textContent='mətnlə klik'">Mətnlə tap məni</button>
+</section>
+
+<section id="dialogs">
+  <button id="alertBtn" onclick="alert('Salam alert')">Alert</button>
+  <button id="confirmBtn" onclick="document.getElementById('dialogResult').textContent = confirm('Əminsiniz?') ? 'OK' : 'Cancel'">Confirm</button>
+  <button id="promptBtn" onclick="document.getElementById('dialogResult').textContent = 'Prompt: ' + prompt('Adınız?')">Prompt</button>
+  <p id="dialogResult"></p>
+  <a id="newTabLink" href="second.html" target="_blank">Yeni tab</a>
+</section>
+
+<section id="frames">
+  <iframe id="frame" srcdoc="<button id='frameBtn' onclick=&quot;document.getElementById('frameResult').textContent='frame klik'&quot;>Frame düyməsi</button><p id='frameResult'></p>"></iframe>
+</section>
+
+<section id="dynamic">
+  <button id="delayBtn" onclick="document.getElementById('spinner').style.display='block';setTimeout(function(){document.getElementById('delayed').style.display='block';document.getElementById('spinner').style.display='none'},1500)">Gecikmə</button>
+  <div id="spinner" style="display:none">Yüklənir...</div>
+  <div id="delayed">Gecikmeli mətn</div>
+  <button id="removeBtn" onclick="document.getElementById('toRemove').remove()">Sil</button>
+  <div id="toRemove">Silinəcək element</div>
+  <input id="upload" type="file" onchange="document.getElementById('uploadResult').textContent=this.files[0].name">
+  <p id="uploadResult"></p>
+  <p id="storageResult"></p>
+</section>
+
+<div id="spacer"></div>
+<button id="bottomBtn" onclick="this.textContent='aşağı kliklendi'">Aşağı düymə</button>
+
+<script>
+  function sel(el) { document.getElementById('itemResult').textContent = 'Seçildi: ' + el.textContent; }
+  document.getElementById('name').addEventListener('keydown', function (e) {
+    document.getElementById('keyResult').textContent = 'key: ' + e.key;
+  });
+  document.getElementById('storageResult').textContent = 'storage: ' + (localStorage.getItem('lang') || 'yox');
+  // Mouse hadisələri ilə drag & drop (Selenium Actions HTML5 DnD-ni dəstəkləmir)
+  var dragging = false;
+  document.getElementById('dragSrc').addEventListener('mousedown', function () { dragging = true; });
+  document.addEventListener('mouseup', function (e) {
+    if (!dragging) return;
+    dragging = false;
+    var target = document.getElementById('dropTarget').getBoundingClientRect();
+    if (e.clientX >= target.left && e.clientX <= target.right && e.clientY >= target.top && e.clientY <= target.bottom) {
+      document.getElementById('dropResult').textContent = 'Düşdü';
+    }
+  });
+</script>
+</body>
+</html>

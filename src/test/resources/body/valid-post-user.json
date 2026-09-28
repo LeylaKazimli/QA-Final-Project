@@ -1,0 +1,6 @@
+{
+  "senderAccountId": "acc_001",
+  "receiverAccountId": "acc_002",
+  "amount": 50,
+  "description": "Test köçürməsi"
+}

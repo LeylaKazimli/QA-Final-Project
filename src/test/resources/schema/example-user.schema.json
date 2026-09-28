@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nümunə: istifadəçi obyekti — öz API-nizə uyğun dəyişin",
+  "type": "object",
+  "required": ["id", "name", "email"],
+  "properties": {
+    "id": { "type": ["string", "integer"] },
+    "name": { "type": "string", "minLength": 1 },
+    "email": { "type": "string", "pattern": "^[^@\\s]+@[^@\\s]+$" }
+  }
+}

@@ -1,0 +1,1 @@
+Fayl yükləmə testləri üçün nümunə fayl.

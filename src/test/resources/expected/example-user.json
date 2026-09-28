@@ -1,0 +1,6 @@
+{
+  "id": "@notNull",
+  "name": "@string",
+  "email": "@regex:^[^@\\s]+@[^@\\s]+$",
+  "createdAt": "@ignore"
+}

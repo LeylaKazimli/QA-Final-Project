@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "title", "price", "tags", "dimensions", "reviews"],
+  "properties": {
+    "id": { "type": "integer" },
+    "title": { "type": "string", "minLength": 1 },
+    "price": { "type": "number", "minimum": 0 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "dimensions": {
+      "type": "object",
+      "required": ["width", "height", "depth"],
+      "properties": { "width": { "type": "number" }, "height": { "type": "number" }, "depth": { "type": "number" } }
+    },
+    "reviews": {
+      "type": "array",
+      "items": { "type": "object", "required": ["rating", "comment"], "properties": { "rating": { "type": "integer", "minimum": 1, "maximum": 5 } } }
+    }
+  }
+}

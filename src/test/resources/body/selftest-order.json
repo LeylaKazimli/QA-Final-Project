@@ -1,0 +1,14 @@
+{
+  "orderId": "${orderId}",
+  "customer": {
+    "email": "${random.email}",
+    "name": "Anar Abbas",
+    "address": { "city": "Bakı", "zip": "AZ1000" }
+  },
+  "items": [
+    { "sku": "SKU-1", "qty": 2, "price": 10.5 },
+    { "sku": "SKU-2", "qty": 1, "price": 99 }
+  ],
+  "paid": true,
+  "coupon": null
+}
