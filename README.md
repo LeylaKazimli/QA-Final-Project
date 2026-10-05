@@ -1,3 +1,61 @@
+# QA Final Layihə — Leyla Kazimli
+
+QA Engineering kursunun bitirmə layihəsi. Müəllimin verdiyi Gauge arxitekturası əsasında yazılıb, framework koduna (`src/test/java`) dəyişiklik edilməyib.
+
+| Hissə | Test obyekti | Spec-lər |
+|---|---|---|
+| API | `https://api.anarabbas.com`: bitirmə layihəsi backlog-u, 10 task, 3 epic | `specs/final-api/` |
+| UI | `https://www.azal.az` | `specs/final-ui/` *(hazırlanır)* |
+
+## Necə işə salmaq
+
+Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-report`).
+
+```bash
+mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (153 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
+```
+
+> Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-api"`
+
+Hesabat: `reports/html-report/index.html`
+
+## API testləri: 153 ssenari, 14 spec
+
+| Epic | Task | Spec | Ssenari |
+|---|---|---|---|
+| Saxlanmış alıcılar | GRAD-101 POST /beneficiaries | `GRAD-101_beneficiaries`, `GRAD-101_beneficiary_limit` | 16 |
+| | GRAD-102 GET /beneficiaries | `GRAD-102_beneficiary_list` | 14 |
+| | GRAD-103 DELETE /beneficiaries/{id} | `GRAD-103_beneficiary_delete` | 7 |
+| Kartlar | GRAD-201 POST /cards | `GRAD-201_cards`, `GRAD-201_card_limit` | 17 |
+| | GRAD-202 GET /cards/{id} | `GRAD-202_card_details` | 6 |
+| | GRAD-203 POST /cards/{id}/block | `GRAD-203_card_block` | 18 |
+| | GRAD-204 POST /cards/{id}/unblock | `GRAD-204_card_unblock` | 9 |
+| Ödənişlər | GRAD-301 GET /billers | `GRAD-301_billers` | 8 |
+| | GRAD-302 POST /bill-payments | `GRAD-302_payments`, `_idempotency`, `_limits` | 38 |
+| | GRAD-303 GET /bill-payments | `GRAD-303_payment_history` | 20 |
+
+Hər ssenarinin adı Excel-dəki test case ID-si ilə başlayır (məs. `TC-PAY-026`), tag-larında task nömrəsi var. Bu, Excel → spec traceability-ni təmin edir.
+
+### Stabillik (flaky testlərin qarşısının alınması)
+
+- **Sandbox qaydası:** hər login yeni, boş mühit açır. Hər spec öz login faylı ilə **bir dəfə** login olur (keşli login step-i, `@BeforeClass`-ın Gauge qarşılığı). Spec-in ssenariləri eyni datanı görür, spec-lər isə bir-birinə qarışmır.
+- **Limitlər:** kart açan ssenarilər sonda kartı bloklayır (3 kart limiti), limit testləri (10 alıcı, 3 kart) ayrıca təmiz sandbox-da işləyir.
+- **Test datası ssenarinin özündə yaradılır.** Əvvəlki run-dan və ya əl ilə yaradılmış dataya asılılıq yoxdur. GRAD-303-də D2 dataseti (21 ödəniş) spec-in birinci "Hazırlıq" ssenarisində yaradılır.
+- **Idempotency açarları** hər run-da təsadüfi yaradılır (`${random.uuid}`).
+- **Sabit gözləmə (sleep) istifadə edilmir.**
+- **Pul dəyərləri mətn kimi müqayisə olunur** (`"0.21"`), çünki `0.2` kimi onluq kəsrlər float tipində dəqiq saxlanmır və ədədi müqayisə yalançı xəta verir.
+
+### Yoxlamalar yalnız status code deyil
+
+Xəta cavablarında `code` (mətn yox), `details` massivində hansı sahənin səhv olduğu və neçə xəta qayıtdığı; uğurlu cavablarda sahələrin dəyəri, formatı (regex) və tipi; uğursuz əməliyyatdan sonra isə datanın **dəyişmədiyi** (status, balans) ayrıca GET sorğusu ilə yoxlanılır.
+
+---
+
+*Aşağıda müəllimin framework sənədləri olduğu kimi saxlanılıb.*
+
+---
+
 # Gauge Test Automation Framework — Web UI & REST API
 
 A ready-to-use test automation framework for graduation projects.
