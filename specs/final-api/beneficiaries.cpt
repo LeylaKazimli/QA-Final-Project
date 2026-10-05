@@ -1,0 +1,13 @@
+# <fullName> adlı və <iban> IBAN-lı AZN alıcısını əlavə et
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "alAd" deyişenine <fullName> deyerini ver
+* "alIban" deyişenine <iban> deyerini ver
+* Body-ni cedvelden qur
+   |key     |value    |
+   |--------|---------|
+   |fullName|${alAd}  |
+   |iban    |${alIban}|
+   |currency|AZN      |
+* "POST" sorğusu gönder "/beneficiaries"
+* Status kodunun "201" olmalıdır

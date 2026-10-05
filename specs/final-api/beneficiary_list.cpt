@@ -1,0 +1,33 @@
+# D1 alıcısı mövcud olsun: <fullName> <iban> <currency> ləqəb <nickname>
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "d1Ad" deyişenine <fullName> deyerini ver
+* "d1Iban" deyişenine <iban> deyerini ver
+* "d1Val" deyişenine <currency> deyerini ver
+* "d1Leqeb" deyişenine <nickname> deyerini ver
+* Body-ni cedvelden qur
+   |key     |value     |
+   |--------|----------|
+   |fullName|${d1Ad}   |
+   |iban    |${d1Iban} |
+   |currency|${d1Val}  |
+   |nickname|${d1Leqeb}|
+* "POST" sorğusu gönder "/beneficiaries"
+* Status kodu "201" ile "409" arasında olmalıdır
+* Json cavabında "code" deyeri "VALIDATION_ERROR" olmamalıdır
+
+# D1 alıcısı mövcud olsun: <fullName> <iban> <currency> ləqəbsiz
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "d1Ad" deyişenine <fullName> deyerini ver
+* "d1Iban" deyişenine <iban> deyerini ver
+* "d1Val" deyişenine <currency> deyerini ver
+* Body-ni cedvelden qur
+   |key     |value    |
+   |--------|---------|
+   |fullName|${d1Ad}  |
+   |iban    |${d1Iban}|
+   |currency|${d1Val} |
+* "POST" sorğusu gönder "/beneficiaries"
+* Status kodu "201" ile "409" arasında olmalıdır
+* Json cavabında "code" deyeri "VALIDATION_ERROR" olmamalıdır
