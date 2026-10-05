@@ -1,0 +1,46 @@
+# <label> adlı <amount> AZN-lik kart aç və id-sini <variable> olaraq yadda saxla
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "kartLabel" deyişenine <label> deyerini ver
+* "kartMebleg" deyişenine <amount> deyerini ver
+* Body-ni cedvelden qur
+   |key          |value        |
+   |-------------|-------------|
+   |accountId    |acc_002      |
+   |initialAmount|${kartMebleg}|
+   |label        |${kartLabel} |
+* "POST" sorğusu gönder "/cards"
+* Status kodunun "201" olmalıdır
+* Json cavabında "id" deyerini <variable> olaraq yadda saxla
+
+# <cardId> kartını təmizlik üçün LOST səbəbi ilə blokla
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "blokKart" deyişenine <cardId> deyerini ver
+* Body-ni cedvelden qur
+   |key   |value|
+   |------|-----|
+   |reason|LOST |
+* "POST" sorğusu gönder "/cards/${blokKart}/block"
+* Status kodunun "200" olmalıdır
+* Json cavabında "status" deyeri "BLOCKED" beraberdir
+
+# <cardId> kartını TEMPORARY səbəbi ilə dondur
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "dondurKart" deyişenine <cardId> deyerini ver
+* Body-ni cedvelden qur
+   |key   |value    |
+   |------|---------|
+   |reason|TEMPORARY|
+* "POST" sorğusu gönder "/cards/${dondurKart}/block"
+* Status kodunun "200" olmalıdır
+* Json cavabında "status" deyeri "FROZEN" beraberdir
+
+# <cardId> kartının statusu <status> olmalıdır
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "yoxlaKart" deyişenine <cardId> deyerini ver
+* "GET" sorğusu gönder "/cards/${yoxlaKart}"
+* Status kodunun "200" olmalıdır
+* Json cavabında "status" deyeri <status> beraberdir
