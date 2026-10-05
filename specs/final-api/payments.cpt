@@ -1,0 +1,26 @@
+# <biller> təchizatçısına <subscriber> nömrəsi ilə <amount> AZN ödəniş göndər
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* Header elave et "Idempotency-Key" = "pay-${random.uuid}"
+* "pBiller" deyişenine <biller> deyerini ver
+* "pSub" deyişenine <subscriber> deyerini ver
+* "pAmount" deyişenine <amount> deyerini ver
+* Body olaraq "payment.json" faylını elave et
+* "POST" sorğusu gönder "/bill-payments"
+
+# <biller> təchizatçısına <subscriber> nömrəsi ilə <amount> AZN ödənişi <key> açarı ilə göndər
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* Header elave et "Idempotency-Key" = <key>
+* "pBiller" deyişenine <biller> deyerini ver
+* "pSub" deyişenine <subscriber> deyerini ver
+* "pAmount" deyişenine <amount> deyerini ver
+* Body olaraq "payment.json" faylını elave et
+* "POST" sorğusu gönder "/bill-payments"
+
+# Kartın balansı <balance> olmalıdır
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* "GET" sorğusu gönder "/cards/${cardId}"
+* Status kodunun "200" olmalıdır
+* Json cavabında "availableBalance" deyeri <balance> beraberdir
