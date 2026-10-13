@@ -1,0 +1,290 @@
+{
+  "Siyahi Mehsul Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')]"
+  },
+  "Siyahi Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')]"
+  },
+  "Siyahi Gorunen Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]"
+  },
+  "Siyahi Mehsul Adi 1": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']//a[contains(@class,'product__name')])[1]"
+  },
+  "Siyahi Mehsul Adi 2": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']//a[contains(@class,'product__name')])[2]"
+  },
+  "Siyahi Mehsul Adi 3": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']//a[contains(@class,'product__name')])[3]"
+  },
+  "Siyahi Mehsul Adi 4": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']//a[contains(@class,'product__name')])[4]"
+  },
+  "Siyahi Mehsul Adi 5": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']//a[contains(@class,'product__name')])[5]"
+  },
+  "Samsung Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'samsung')]"
+  },
+  "Samsung Olmayan Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'samsung'))]"
+  },
+  "Apple Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'iphone') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apple')]"
+  },
+  "Apple Olmayan Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'iphone') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apple'))]"
+  },
+  "Apple ve Samsung Olmayan Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'iphone') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apple') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'samsung'))]"
+  },
+  "HMD Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'hmd')]"
+  },
+  "HMD Olmayan Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'hmd'))]"
+  },
+  "iPhone 17 Pro Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][contains(normalize-space(.),'iPhone 17 Pro')]"
+  },
+  "iPhone Air Mehsul Adlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'product__name')][contains(normalize-space(.),'iPhone Air')]"
+  },
+  "Utu Mehsul Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][contains(translate(normalize-space(.),'Ü','ü'),'ütü')]"
+  },
+  "Brend Apple": {
+    "locatorType": "XPATH",
+    "locatorValue": "//label[@for='filter-1']"
+  },
+  "Brend Samsung": {
+    "locatorType": "XPATH",
+    "locatorValue": "//label[@for='filter-7']"
+  },
+  "Brend HMD": {
+    "locatorType": "XPATH",
+    "locatorValue": "//label[@for='filter-19689']"
+  },
+  "Brend Apple Checkbox": {
+    "locatorType": "ID",
+    "locatorValue": "filter-1"
+  },
+  "Brend Samsung Checkbox": {
+    "locatorType": "ID",
+    "locatorValue": "filter-7"
+  },
+  "Qiymet Min Input": {
+    "locatorType": "XPATH",
+    "locatorValue": "//form[@id='categoriesFilterForm']//input[@name='price_from']"
+  },
+  "Qiymet Max Input": {
+    "locatorType": "XPATH",
+    "locatorValue": "//form[@id='categoriesFilterForm']//input[@name='price_to']"
+  },
+  "500-1000 Araligindan Kenar Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 500 or number(substring-before(normalize-space(.),' ')) > 1000 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "500-1500 Araligindan Kenar Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 500 or number(substring-before(normalize-space(.),' ')) > 1500 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2000-den Asagi Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 2000 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "300-den Yuxari Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) > 300 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2509-2510 Araligindan Kenar Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 2509 or number(substring-before(normalize-space(.),' ')) > 2510 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2510-dan Asagi Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 2510 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2509-dan Yuxari Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) > 2509 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "500-den Asagi Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 500 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2509-dan Asagi Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) < 2509 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "2510-dan Yuxari Qiymetler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')][number(substring-before(normalize-space(.),' ')) > 2510 or not(number(substring-before(normalize-space(.),' ')) = number(substring-before(normalize-space(.),' ')))]"
+  },
+  "A Mehsulu Siyahida": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//*[contains(@href,'iphone-air-256-gb-cloud-white') or contains(@data-url,'iphone-air-256-gb-cloud-white')]"
+  },
+  "Siralama Select": {
+    "locatorType": "ID",
+    "locatorValue": "sortSelect"
+  },
+  "Siralama Variantlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option"
+  },
+  "Siralama Bos Variant": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='']"
+  },
+  "Siralama Evvelce baha": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Əvvəlcə baha']"
+  },
+  "Siralama Ada gore": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Ada görə']"
+  },
+  "Siralama Yeniler evvelce": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Yenilər əvvəlcə']"
+  },
+  "Siralama Populyar evvelce": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Populyar məhsullar əvvəlcə']"
+  },
+  "Siralama Populyar sonda": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Populyar məhsullar sonda']"
+  },
+  "Siralama Evvelce ucuz": {
+    "locatorType": "XPATH",
+    "locatorValue": "//select[@id='sortSelect']/option[normalize-space()='Əvvəlcə ucuz']"
+  },
+  "Artan Sira Pozuntulari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')]][number(substring-before(normalize-space(.//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]),' ')) > number(substring-before(normalize-space(following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')][1]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]),' '))]"
+  },
+  "Azalan Sira Pozuntulari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')]][number(substring-before(normalize-space(.//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]),' ')) < number(substring-before(normalize-space(following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')][1]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]),' '))]"
+  },
+  "Ad Sirasi Pozuntulari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')]][string-length(substring-before('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',translate(substring(normalize-space(.//a[contains(@class,'product__name')]),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))) > string-length(substring-before('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',translate(substring(normalize-space(following-sibling::div[contains(concat(' ',normalize-space(@class),' '),' product ')][1]//a[contains(@class,'product__name')]),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')))]"
+  },
+  "Siyahi Ayliq Odenisler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//div[contains(@class,'ppl-price')]"
+  },
+  "Siyahi Yanlis Ayliq Odenisler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//div[contains(@class,'ppl-price')][not(number(substring-before(normalize-space(.),' ')) > 0) or not(contains(normalize-space(.),'AZN'))]"
+  },
+  "A Karti Cloud White Reng": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//input[contains(@data-url,'iphone-air-256-gb-cloud-white')]/following-sibling::label[1]"
+  },
+  "A Karti Sekil Linki": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//div[contains(@class,'product__img')]//a[contains(@href,'iphone-air-256-gb-cloud-white')]"
+  },
+  "A Karti Ad Linki": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//a[contains(@class,'product__name') and contains(@href,'iphone-air-256-gb-cloud-white')]"
+  },
+  "A Karti Cari Qiymet": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//p[contains(@class,'new-price')]"
+  },
+  "A Karti Kohne Qiymet": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//span[contains(@class,'old-price')]"
+  },
+  "A Karti Endirimi Duzgun": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//div[contains(@class,'product__price__current')][number(substring-before(normalize-space(span[contains(@class,'old-price')]),' ')) > number(substring-before(normalize-space(p[contains(@class,'new-price')]),' '))]"
+  },
+  "A Karti Sebete Elave Button": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-air-256-gb-cloud-white')] or .//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//div[contains(@class,'product__flex-right') and not(contains(@class,'d-none'))]//a[contains(@class,'product-add-to-cart')]"
+  },
+  "PDP Basliq": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//h1[not(contains(@class,'product-discount-text'))]"
+  },
+  "PDP Cari Qiymet": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'price-info__buy-now') and not(ancestor::div[contains(@class,'product-view__fixed-bar__info')])]//p[contains(@class,'new-price')]"
+  },
+  "PDP Kohne Qiymet": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'price-info__buy-now') and not(ancestor::div[contains(@class,'product-view__fixed-bar__info')])]//span[contains(@class,'old-price')]"
+  },
+  "PDP Sekil": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//label[contains(@class,'thumbs__item')]/img)[1]"
+  },
+  "PDP Bir Klikle Al Button": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'price-info__buy-now') and not(ancestor::div[contains(@class,'product-view__fixed-bar__info')])]//a[contains(@class,'btn--with_icon')]"
+  },
+  "Ana Sehife Ilk Mehsul Adi": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[contains(concat(' ',normalize-space(@class),' '),' product ') and contains(@class,'is-selected')]//a[contains(@class,'product__name')])[1]"
+  },
+  "Heftenin Teklifi Bloklari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'week_discount')][.//span[contains(@class,'old-price')]]"
+  },
+  "Heftenin Teklifi Endirim Uygunsuzluqlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'week_discount')][.//span[contains(@class,'old-price')]][round(100*number(substring-before(normalize-space(.//span[contains(@class,'old-price')]),' '))) - round(100*number(substring-before(normalize-space(.//p[contains(@class,'new-price')]),' '))) != round(100*number(substring-before(substring-after(normalize-space(.//div[contains(@class,'product__label--orange')]),'-'),' ')))]"
+  },
+  "Heftenin Teklifi Kohne Qiymeti Boyuk Olmayan": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'week_discount')][.//span[contains(@class,'old-price')]][not(number(substring-before(normalize-space(.//span[contains(@class,'old-price')]),' ')) > number(substring-before(normalize-space(.//p[contains(@class,'new-price')]),' ')))]"
+  },
+  "Heftenin Teklifi Natamam Bloklar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'week_discount')][not(.//div[contains(@class,'product__label') and contains(normalize-space(),'Stokda var')]) or not(.//a[contains(@class,'btn--with_icon') and contains(normalize-space(),'Bir kliklə al')]) or not(.//a[contains(@class,'week_product_add')])]"
+  },
+  "Axtaris Basligi": {
+    "locatorType": "ID",
+    "locatorValue": "search-title"
+  },
+  "Axtaris Lupa": {
+    "locatorType": "ID",
+    "locatorValue": "header__search-button"
+  },
+  "RU Menyu Telefon Kateqoriyasi": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//ul[@class='menu']/li[@class='menu__item'])[1]/label"
+  },
+  "RU Menyu Mobil telefonlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "((//ul[@class='menu']/li[@class='menu__item'])[1]//a[@class='menu__item__sub__item__link'])[1]"
+  },
+  "RU Ust Xett Magazalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'header__top')]//ul[contains(@class,'main_nav__list')]/li[2]/a"
+  }
+}

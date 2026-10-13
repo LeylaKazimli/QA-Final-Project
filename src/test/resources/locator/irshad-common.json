@@ -1,0 +1,182 @@
+{
+  "Header Logo": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[@aria-label='İrşad' and @href='https://irshad.az/az'])[1]"
+  },
+  "Kataloq Button": {
+    "locatorType": "ID",
+    "locatorValue": "open-menu"
+  },
+  "Axtaris Input": {
+    "locatorType": "XPATH",
+    "locatorValue": "//input[@id='header__search-input' and @name='q']"
+  },
+  "Muqayise Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'header__tools__item--compare')]"
+  },
+  "Beyendim Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'header__tools__item--heart')]"
+  },
+  "Sebet Link": {
+    "locatorType": "ID",
+    "locatorValue": "AccountBasketAjax"
+  },
+  "Sexsi Kabinet Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Şəxsi kabinet']"
+  },
+  "Qaynar Xett Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[@href='tel:*0171'])[1]"
+  },
+  "Kataloq Esas Kateqoriya": {
+    "locatorType": "CSS",
+    "locatorValue": "ul.menu > li.menu__item > label.menu__item__link"
+  },
+  "Menyu Telefon ve aksesuarlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@class='menu']/li[@class='menu__item']/label[normalize-space()='Telefon və aksesuarlar']"
+  },
+  "Menyu Mobil telefonlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@class='menu__item__sub__item__link' and @aria-label='Mobil telefonlar']"
+  },
+  "Ust Xett Kampaniyalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[@aria-label='Kampaniyalar' and contains(@href,'/az/kampaniyalar')])[1]"
+  },
+  "Ust Xett Magazalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[@aria-label='Mağazalar' and contains(@href,'/az/magazalar')])[1]"
+  },
+  "Ust Xett Korporativ": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Korporativ']"
+  },
+  "Ust Xett Samsung": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Samsung' and contains(@href,'/brend/samsung')]"
+  },
+  "Ust Xett Apple": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Apple' and contains(@href,'/brend/apple')]"
+  },
+  "Ust Xett Honor": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Honor' and contains(@href,'/brend/honor')]"
+  },
+  "Ust Xett Outlet": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[@aria-label='Outlet' and not(contains(@class,'menu__item__link'))])[1]"
+  },
+  "Ust Xett Kondisionerler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@aria-label='Kondisionerlər']"
+  },
+  "Breadcrumb Elementleri": {
+    "locatorType": "CSS",
+    "locatorValue": "ul.breadcrumbs > li"
+  },
+  "Breadcrumb Irshad": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@class='breadcrumbs']//a[@aria-label='İrşad']"
+  },
+  "Breadcrumb Telefon ve aksesuarlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@class='breadcrumbs']//a[normalize-space()='Telefon və aksesuarlar']"
+  },
+  "Breadcrumb Mobil telefonlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@class='breadcrumbs']//*[normalize-space()='Mobil telefonlar']"
+  },
+  "Footer": {
+    "locatorType": "TAG_NAME",
+    "locatorValue": "footer"
+  },
+  "Footer Daxili Linkler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[contains(@href,'/az/sirket/') or contains(@href,'/az/musteri-ucun/') or contains(@href,'/az/magazalar') or contains(@href,'/az/kampaniyalar')]"
+  },
+  "Footer Sosial Ikonlar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='facebook' or @aria-label='instagram' or @aria-label='youtube' or @aria-label='whatsapp' or @aria-label='telegram' or @aria-label='tiktok' or @aria-label='linkedin' or @aria-label='twiiter']"
+  },
+  "Footer Tetbiq Duymeleri": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='PlayStore' or @aria-label='AppStore']"
+  },
+  "Footer Copyright": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//div[contains(@class,'footer__copyright')]"
+  },
+  "Footer Haqqimizda": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Haqqımızda']"
+  },
+  "Footer Magazalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Mağazalar']"
+  },
+  "Footer Vakansiyalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Vakansiyalar']"
+  },
+  "Footer Kampaniyalar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Kampaniyalar']"
+  },
+  "Footer Sertlerimiz": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Şərtlərimiz']"
+  },
+  "Footer Catdirilma qaydalari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Çatdırılma qaydaları']"
+  },
+  "Footer Bonus qaydalari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Bonuslardan istifadə qaydaları']"
+  },
+  "Footer Sual-Cavab": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Sual-Cavab']"
+  },
+  "Footer Hisse-hisse odenis": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Hissə-hissə ödəniş']"
+  },
+  "Footer Mexfilik siyaseti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Məxfilik siyasəti']"
+  },
+  "Footer Korporativ satislar": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Korporativ satışlar']"
+  },
+  "Footer Istifade qaydalari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='İstifadə qaydaları']"
+  },
+  "Footer Bloq": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Bloq']"
+  },
+  "Footer Sikayet ve teklifler": {
+    "locatorType": "XPATH",
+    "locatorValue": "//footer//a[@aria-label='Şikayət və təkliflər']"
+  },
+  "Dil Secici": {
+    "locatorType": "XPATH",
+    "locatorValue": "//li[contains(@class,'header__top__list__item--lang')]/div[contains(@class,'header__top__list__item__selected')]"
+  },
+  "Rus Dili Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@class='localization-link' and @data-locale='ru']"
+  },
+  "Azerbaycan Dili Link": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[@class='localization-link' and @data-locale='az']"
+  }
+}

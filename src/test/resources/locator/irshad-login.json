@@ -1,0 +1,18 @@
+{
+  "Telefon Input": {
+    "locatorType": "XPATH",
+    "locatorValue": "//input[@placeholder='+(994) (00) 000-00-00']"
+  },
+  "Daxil ol Button": {
+    "locatorType": "XPATH",
+    "locatorValue": "//button[normalize-space()='Daxil ol']"
+  },
+  "Telefon Xeta Mesaji": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[normalize-space()='Nömrə düzgün deyil']"
+  },
+  "Giris Basligi": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[self::h1 or self::h2 or self::h3][normalize-space()='Giriş']"
+  }
+}

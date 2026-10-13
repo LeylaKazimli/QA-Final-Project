@@ -1,0 +1,118 @@
+{
+  "B Karti Cosmic Orange Reng": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//input[contains(@data-url,'iphone-17-pro-1-tb-cosmic-orange-2')] or .//a[contains(@href,'iphone-17-pro-1-tb-cosmic-orange-2')]]//input[contains(@data-url,'iphone-17-pro-1-tb-cosmic-orange-2')]/following-sibling::label[1]"
+  },
+  "Kart A Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'to-wishlist') and @data-product-code='RF1R0JV']"
+  },
+  "Kart A Beyen Ikonu Aktiv": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'to-wishlist') and @data-product-code='RF1R0JV' and contains(concat(' ',normalize-space(@class),' '),' active ')]"
+  },
+  "Kart A Muqayise Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'to-compare') and @data-product-code='RF1R0JV']"
+  },
+  "Kart B Muqayise Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems']//a[contains(@class,'to-compare') and @data-product-code='LZ5AGZT']"
+  },
+  "Siyahi 1-ci Kart Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')])[1]//div[contains(@class,'product__tools') and not(contains(@class,'d-none'))]//a[contains(@class,'to-wishlist')]"
+  },
+  "Siyahi 2-ci Kart Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')])[2]//div[contains(@class,'product__tools') and not(contains(@class,'d-none'))]//a[contains(@class,'to-wishlist')]"
+  },
+  "Siyahi 3-cu Kart Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[@id='productGridItems']/div[contains(concat(' ',normalize-space(@class),' '),' product ')])[3]//div[contains(@class,'product__tools') and not(contains(@class,'d-none'))]//a[contains(@class,'to-wishlist')]"
+  },
+  "PDP Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'product-view__body')]//a[contains(@class,'to-wishlist')])[1]"
+  },
+  "PDP Beyen Ikonu Aktiv": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'product-view__body')]//a[contains(@class,'to-wishlist') and contains(concat(' ',normalize-space(@class),' '),' active ')])[1]"
+  },
+  "PDP Muqayise Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'product-view__body')]//a[contains(@class,'to-compare')])[1]"
+  },
+  "Header Beyendim Sayi": {
+    "locatorType": "ID",
+    "locatorValue": "favorite-count"
+  },
+  "Header Muqayise Sayi": {
+    "locatorType": "ID",
+    "locatorValue": "compared-item-count"
+  },
+  "Beyendiklerim Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[@id='AccountWishlist']//div[contains(@class,'products__list__body')]/div[contains(concat(' ',normalize-space(@class),' '),' product ')]"
+  },
+  "Beyendiklerim A Karti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[@id='AccountWishlist']//div[contains(@class,'products__list__body')]/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//a[contains(@class,'product__name') and contains(@href,'iphone-air-256-gb-cloud-white')]]"
+  },
+  "Beyendiklerim B Karti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[@id='AccountWishlist']//div[contains(@class,'products__list__body')]/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//a[contains(@class,'product__name') and contains(@href,'iphone-17-pro-1-tb-cosmic-orange-2')]]"
+  },
+  "Beyendiklerim A Beyen Ikonu": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[@id='AccountWishlist']//div[contains(@class,'products__list__body')]/div[contains(concat(' ',normalize-space(@class),' '),' product ')][.//a[contains(@class,'product__name') and contains(@href,'iphone-air-256-gb-cloud-white')]]//a[contains(@class,'to-wishlist')]"
+  },
+  "Beyendiklerim Bos Mesaji": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[@id='AccountWishlist']//*[not(self::script)][contains(.,'boşdur') or contains(.,'yoxdur') or contains(.,'əlavə olunmayıb') or contains(.,'əlavə edilməyib') or contains(.,'tapılmadı')]"
+  },
+  "Muqayise Mehsul Basliqlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//a[contains(@class,'compare__product-title')]"
+  },
+  "Muqayise A Basligi": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//a[contains(@class,'compare__product-title') and contains(@href,'iphone-air-256-gb-cloud-white')]"
+  },
+  "Muqayise A Dublikat Basligi": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//div[contains(@class,'compare__block__right')]//a[contains(@class,'compare__product-title') and contains(@href,'iphone-air-256-gb-cloud-white')])[2]"
+  },
+  "Muqayise B Basligi": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//a[contains(@class,'compare__product-title') and contains(@href,'iphone-17-pro-1-tb-cosmic-orange-2')]"
+  },
+  "Muqayise A Sil": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//div[contains(@class,'compare__item__head')][.//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//a[contains(@class,'compare__delete')]"
+  },
+  "Muqayise B Sil": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//div[contains(@class,'compare__item__head')][.//a[contains(@href,'iphone-17-pro-1-tb-cosmic-orange-2')]]//a[contains(@class,'compare__delete')]"
+  },
+  "Muqayise A Qiymeti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//div[contains(@class,'compare__item__head')][.//a[contains(@href,'iphone-air-256-gb-cloud-white')]]//span[contains(@class,'compare__product-price')]"
+  },
+  "Muqayise Xususiyyet Setirleri": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'compare__block__right')]//table[contains(@class,'compare__block__table')]//tr[position()>1]"
+  },
+  "Bos Muqayise Mesaji": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[normalize-space()='Müqayisə etmək üçün məhsul əlavə olunmayıb']"
+  },
+  "Bos Muqayise Alisverise Davam Et": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//*[normalize-space()='Müqayisə etmək üçün məhsul əlavə olunmayıb']/following::a[normalize-space()='Alışverişə davam et'])[1]"
+  },
+  "Bos Muqayise Sebete Kec": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//*[normalize-space()='Müqayisə etmək üçün məhsul əlavə olunmayıb']/following::a[normalize-space()='Səbətə keç'])[1]"
+  }
+}

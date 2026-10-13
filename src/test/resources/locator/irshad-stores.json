@@ -1,0 +1,54 @@
+{
+  "Tab Baki uzre": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'branch-category') and contains(normalize-space(),'Bakı üzrə')]"
+  },
+  "Tab Bolgeler uzre": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'branch-category') and contains(normalize-space(),'Bölgələr üzrə')]"
+  },
+  "Tab Servis merkezi": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'branch-category') and contains(normalize-space(),'Servis mərkəzi')]"
+  },
+  "Baki Magaza Siyahisi": {
+    "locatorType": "ID",
+    "locatorValue": "centerBranches"
+  },
+  "Bolge Magaza Siyahisi": {
+    "locatorType": "ID",
+    "locatorValue": "regionBranches"
+  },
+  "Servis Merkezi Siyahisi": {
+    "locatorType": "ID",
+    "locatorValue": "serviceCenters"
+  },
+  "Baki Magaza Kartlari": {
+    "locatorType": "CSS",
+    "locatorValue": "ul#centerBranches a.stores__offices__item"
+  },
+  "Bolge Magaza Kartlari": {
+    "locatorType": "CSS",
+    "locatorValue": "ul#regionBranches a.stores__offices__item"
+  },
+  "Servis Merkezi Kartlari": {
+    "locatorType": "CSS",
+    "locatorValue": "ul#serviceCenters a.stores__offices__item"
+  },
+  "Natamam Magaza Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//a[contains(@class,'stores__offices__item')][normalize-space(@data-title)='' or normalize-space(@data-address)='' or normalize-space(@data-hours)='']"
+  },
+  "Magaza Axtaris Input": {
+    "locatorType": "ID",
+    "locatorValue": "searchInput"
+  },
+  "Yasamal Magaza Karti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@id='centerBranches']//a[contains(@class,'stores__offices__item') and contains(@data-title,'Yasamal')]"
+  },
+  "Bas Ofis Karti": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@id='centerBranches']//a[contains(@class,'stores__offices__item') and @data-title='Baş ofis']"
+  }
+}

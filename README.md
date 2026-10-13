@@ -5,7 +5,7 @@ QA Engineering kursunun bitirmə layihəsi. Müəllimin verdiyi Gauge arxitektur
 | Hissə | Test obyekti | Spec-lər |
 |---|---|---|
 | API | `https://api.anarabbas.com`: bitirmə layihəsi backlog-u, 10 task, 3 epic | `specs/final-api/` |
-| UI | `https://www.azal.az` | `specs/final-ui/` *(hazırlanır)* |
+| UI | `https://irshad.az` (onlayn mağaza) | `specs/final-ui/` |
 
 ## Necə işə salmaq
 
@@ -14,6 +14,8 @@ Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-r
 ```bash
 mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (153 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
+mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (100 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (106 ssenari, bug-larla)
 ```
 
 > Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-api"`
@@ -49,6 +51,45 @@ Hər ssenarinin adı Excel-dəki test case ID-si ilə başlayır (məs. `TC-PAY-
 ### Yoxlamalar yalnız status code deyil
 
 Xəta cavablarında `code` (mətn yox), `details` massivində hansı sahənin səhv olduğu və neçə xəta qayıtdığı; uğurlu cavablarda sahələrin dəyəri, formatı (regex) və tipi; uğursuz əməliyyatdan sonra isə datanın **dəyişmədiyi** (status, balans) ayrıca GET sorğusu ilə yoxlanılır.
+
+## UI testləri: 106 ssenari, 6 spec (irshad.az)
+
+| Spec | Modul | Ssenari |
+|---|---|---|
+| `irshad_login_general` | Ümumi (HTTPS, URL), giriş səhifəsi | 10 |
+| `irshad_home_navigation` | Ana səhifə, header, menyu, breadcrumb, dil, footer, mağazalar | 31 |
+| `irshad_catalog` | Kateqoriya: brend/qiymət filtri, sıralama, məhsul kartı, məhsul səhifəsi | 26 |
+| `irshad_search` | Axtarış, uçdan-uca axın (axtarış → səbət → silmə) | 11 |
+| `irshad_cart` | Səbət: əlavə, say, cəm, silmə, F5 | 12 |
+| `irshad_fav_compare` | Bəyəndiklərim və müqayisə | 16 |
+
+Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokatorlar `src/test/resources/locator/irshad-*.json` fayllarındadır; Java koduna dəyişiklik edilməyib.
+
+### Teqlər
+
+| Teq | Məna |
+|---|---|
+| `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027 |
+| `backlog` | Avtomatlaşdırma tamamlanmayıb (boş müqayisə səhifəsinin düymələri): TC-UI-CMP-001, TC-UI-CMP-002, TC-UI-CART-019 — Excel-də "Not Run: automation backlog" |
+
+Regression run `known-bug` və `backlog` ssenarilərini çıxarır (100 ssenari). Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
+
+### Stabillik
+
+- Hər ssenari yeni brauzer sessiyası ilə başlayır (qonaq istifadəçi, boş səbət / bəyəndiklər / müqayisə) — ssenarilər bir-birindən asılı deyil.
+- `Thread.sleep` və JavaScript klik istifadə edilmir: bütün yoxlamalar framework-ün gözləmə mexanizmi (`assertEventually`) ilə aparılır.
+- Siyahı yoxlamaları (filtr, sıralama) qaydanı **pozan** elementləri tapan XPath-lərlə yazılıb; onların sayı 0 olmalıdır (məs. "Artan Sira Pozuntulari").
+- Qiymət filtrində sahə təmizlənən kimi sayt ayrıca sorğu göndərir; növbəti dəyər yalnız URL yeniləndikdən sonra yazılır — sorğuların cavabları qarışmır.
+- Real sifariş verilmir, "Daxil ol" düyməsinə real nömrə ilə basılmır.
+
+### Test datası
+
+Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB Cloud White, B = iPhone 17 Pro 1 TB Cosmic Orange.
+
+- **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
+- **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
+
+> Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"`
 
 ---
 

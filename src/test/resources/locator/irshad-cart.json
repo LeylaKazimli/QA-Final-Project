@@ -1,0 +1,86 @@
+{
+  "PDP Sebete Elave Button": {
+    "locatorType": "XPATH",
+    "locatorValue": "//section[contains(@class,'product-view') and not(contains(@class,'d-none'))]//div[contains(@class,'price-info__buy-now') and not(ancestor::div[contains(@class,'product-view__fixed-bar__info')])]//a[contains(@class,'basket_button')]"
+  },
+  "Header Sebet Sayi": {
+    "locatorType": "ID",
+    "locatorValue": "basket-count"
+  },
+  "Sebet Mehsul Setirleri": {
+    "locatorType": "CSS",
+    "locatorValue": "section.basket div.basket__content__item"
+  },
+  "Sebet Ilk Mehsul Adi": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'basket')]//a[contains(@class,'product__name')])[1]"
+  },
+  "Sebet Ilk Mehsul Sayi": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'basket')]//input[contains(@class,'basket-counter')])[1]"
+  },
+  "Sebet Ilk Mehsul Plus": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'basket')]//button[contains(@class,'counter__plus')])[1]"
+  },
+  "Sebet Ilk Mehsul Minus": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'basket')]//button[contains(@class,'counter__minus')])[1]"
+  },
+  "Sebet Ilk Mehsul Qiymeti": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//section[contains(@class,'basket')]//div[contains(@class,'basket__content__item')]//p[contains(@class,'new-price')])[1]"
+  },
+  "Sebet Ilk Mehsul Sil": {
+    "locatorType": "XPATH",
+    "locatorValue": "(//a[contains(@class,'basket__content__item__delete')])[1]"
+  },
+  "Sebet iPhone Air Setri": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'basket__content__item')][.//a[contains(@class,'product__name') and contains(normalize-space(),'iPhone Air 256 GB Cloud White')]]"
+  },
+  "Sebet iPhone 17 Pro Setri": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'basket__content__item')][.//a[contains(@class,'product__name') and contains(normalize-space(),'iPhone 17 Pro 1 TB Cosmic Orange')]]"
+  },
+  "Sebet iPhone 17 Pro Sil": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'basket__content__item')][.//a[contains(@class,'product__name') and contains(normalize-space(),'iPhone 17 Pro 1 TB Cosmic Orange')]]//a[contains(@class,'basket__content__item__delete')]"
+  },
+  "Sebet Mehsullarin Qiymeti": {
+    "locatorType": "ID",
+    "locatorValue": "total_old_price"
+  },
+  "Sebet Endirim": {
+    "locatorType": "ID",
+    "locatorValue": "discount"
+  },
+  "Sebet Toplam Qiymet": {
+    "locatorType": "ID",
+    "locatorValue": "total_price"
+  },
+  "Sifarisi Resmilesdir Button": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'basket__total')]//a[normalize-space()='Sifarişi rəsmiləşdir']"
+  },
+  "Sebet iPhone Air Sil": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[contains(@class,'basket__content__item')][.//a[contains(@class,'product__name') and contains(normalize-space(),'iPhone Air 256 GB Cloud White')]]//a[contains(@class,'basket__content__item__delete')]"
+  },
+  "Sebet Cemi 1 Ededin Qiymetine Beraber": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[@id='total_price'][round(100*number(normalize-space(translate(.,'AZN','')))) = round(100*number(normalize-space(translate((//section[contains(@class,'basket')]//div[contains(@class,'basket__content__item')]//p[contains(@class,'new-price')])[1],'AZN',''))))]"
+  },
+  "Sebet Cemi 2 Ededin Qiymetine Beraber": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[@id='total_price'][round(100*number(normalize-space(translate(.,'AZN','')))) = round(200*number(normalize-space(translate((//section[contains(@class,'basket')]//div[contains(@class,'basket__content__item')]//p[contains(@class,'new-price')])[1],'AZN',''))))]"
+  },
+  "Sebet Cemi Setirlerin Cemine Beraber": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[@id='total_price'][round(100*number(normalize-space(translate(.,'AZN','')))) = round(100*sum(//section[contains(@class,'basket')]//div[contains(@class,'basket__content__item')]//p[contains(@class,'new-price')]))]"
+  },
+  "Sebet Cemi Endirimle Uygun": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[@id='total_price'][round(100*number(normalize-space(translate(.,'AZN','')))) = round(100*(number(normalize-space(translate(//*[@id='total_old_price'],'AZN',''))) + number(normalize-space(translate(//*[@id='discount'],'AZN','')))))]"
+  }
+}
