@@ -89,6 +89,13 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
+### İcra nəticəsi (13–14.10.2026)
+
+Regression (`!known-bug & !backlog`) spec-lər üzrə ayrı-ayrı işə salınıb: **100 Passed, 0 Failed**; bug-ları tutan ssenarilər də daxil olmaqla 101 icrada pass rate **99%** (yeganə Failed — TC-UI-HOME-007, BUG-UI-025). Ətraflı hesabat (Allure strukturu üzrə: Overview, Suites, Categories, Trend, hər ssenarinin statusu) Excel faylının **"Test Execution Report"** vərəqindədir.
+
+- Bəzi ssenarilər ilk cəhddə **Broken** olub: səhifə 5 dəqiqə ərzində yüklənməyib (`TimeoutException`, test yoxlama addımına çatmayıb) və təkrar run-da keçib. Səbəb test məntiqi deyil, mühitdir: saytdakı Facebook tracker sorğusu (`connect.facebook.net`) bəzən səhifənin yüklənməsini saxlayır.
+- Tək ssenarini təkrar işə salmaq üçün spec-dəki sətir nömrəsi göstərilir: `mvn test "-Dgauge.specs.dir=specs/final-ui/irshad_search.spec:99"`
+
 > Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"`
 
 ---
