@@ -24,6 +24,7 @@ tags: api, regression, GRAD-201, positive
    |label        |Kommunal|
 * "POST" sorğusu gönder "/cards"
 * Status kodunun "201" olmalıdır
+* Cavab "api-card.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabını cedvel ile yoxla
    |path       |value                   |
    |-----------|------------------------|

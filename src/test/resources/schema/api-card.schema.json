@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Virtual card (GRAD-201/202/203/204 cavabı)",
+  "type": "object",
+  "required": [
+    "id",
+    "maskedPan",
+    "expiry",
+    "status",
+    "currency",
+    "availableBalance",
+    "spentToday",
+    "limits",
+    "label",
+    "blockReason",
+    "blockedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^vcd_[a-z0-9]{8}$"
+    },
+    "maskedPan": {
+      "type": "string",
+      "pattern": "^4169 73[*][*] [*]{4} [0-9]{4}$"
+    },
+    "expiry": {
+      "type": "string",
+      "pattern": "^(0[1-9]|1[0-2])/[0-9]{2}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "FROZEN",
+        "BLOCKED"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "AZN",
+        "USD"
+      ]
+    },
+    "availableBalance": {
+      "type": "number",
+      "minimum": 0
+    },
+    "spentToday": {
+      "type": "number",
+      "minimum": 0
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "dailyOnline",
+        "perTransaction"
+      ],
+      "properties": {
+        "dailyOnline": {
+          "type": "number"
+        },
+        "perTransaction": {
+          "type": "number"
+        }
+      }
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blockReason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "TEMPORARY",
+        "LOST",
+        "STOLEN",
+        null
+      ]
+    },
+    "blockedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

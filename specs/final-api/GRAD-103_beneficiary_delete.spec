@@ -111,6 +111,7 @@ tags: api, regression, GRAD-103, negative
 * Authorization header-ine tokeni elave et
 * "DELETE" sorğusu gönder "/beneficiaries/ben_00000000"
 * Status kodunun "404" olmalıdır
+* Cavab "api-error.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "code" deyeri "NOT_FOUND" beraberdir
 
 ## TC-BEND-009 Token olmadan alıcı silmək cəhdinin rədd edilməsi

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Payment history (GRAD-303 GET /bill-payments cavabı)",
+  "type": "object",
+  "required": [
+    "page",
+    "limit",
+    "total",
+    "totalPages",
+    "items"
+  ],
+  "properties": {
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 50
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totalPages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "receiptNo",
+          "createdAt"
+        ],
+        "properties": {
+          "receiptNo": {
+            "type": "string",
+            "pattern": "^RCP-[0-9]{8}-[0-9]{6}$"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

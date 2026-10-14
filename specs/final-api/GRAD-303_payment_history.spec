@@ -75,6 +75,7 @@ tags: api, regression, GRAD-303, positive
 * Authorization header-ine tokeni elave et
 * "GET" sorğusu gönder "/bill-payments"
 * Status kodunun "200" olmalıdır
+* Cavab "api-payment-history.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabını cedvel ile yoxla
    |path      |value|
    |----------|-----|

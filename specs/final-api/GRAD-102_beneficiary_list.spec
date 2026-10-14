@@ -23,6 +23,7 @@ tags: api, regression, GRAD-102, positive
 * Authorization header-ine tokeni elave et
 * "GET" sorğusu gönder "/beneficiaries"
 * Status kodunun "200" olmalıdır
+* Cavab "api-beneficiary-list.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "total" deyeri "5" beraberdir
 * Json cavabında "items" massivinin ölçüsü "5" olmalıdır
 * Json cavabını cedvel ile yoxla

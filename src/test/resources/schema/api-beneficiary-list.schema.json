@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Beneficiary list (GRAD-102 GET /beneficiaries cavabı)",
+  "type": "object",
+  "required": [
+    "items",
+    "total"
+  ],
+  "properties": {
+    "total": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fullName",
+          "iban",
+          "currency"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ben_[a-z0-9]{8}$"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "iban": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

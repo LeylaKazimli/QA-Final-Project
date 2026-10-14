@@ -21,6 +21,7 @@ tags: api, regression, GRAD-204, positive, state-transition
 * Authorization header-ine tokeni elave et
 * "POST" sorğusu gönder "/cards/${cardId}/unblock"
 * Status kodunun "200" olmalıdır
+* Cavab "api-card-state.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabını cedvel ile yoxla
    |path       |value |
    |-----------|------|

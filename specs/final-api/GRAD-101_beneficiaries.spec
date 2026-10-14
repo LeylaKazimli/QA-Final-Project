@@ -21,6 +21,7 @@ tags: api, regression, GRAD-101, positive
    |nickname|Anam                        |
 * "POST" sorğusu gönder "/beneficiaries"
 * Status kodunun "201" olmalıdır
+* Cavab "api-beneficiary.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabını cedvel ile yoxla
    |path     |value                       |
    |---------|----------------------------|
@@ -81,6 +82,7 @@ tags: api, regression, GRAD-101, negative
    |currency|GBP  |
 * "POST" sorğusu gönder "/beneficiaries"
 * Status kodunun "400" olmalıdır
+* Cavab "api-error.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "code" deyeri "VALIDATION_ERROR" beraberdir
 * Json cavabında "details" massivinin ölçüsü "3" olmalıdır
 * Json cavabında "details.field" deyerinde "fullName" olmalıdır

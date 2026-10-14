@@ -27,6 +27,7 @@ tags: api, regression, GRAD-202, positive
 * Authorization header-ine tokeni elave et
 * "GET" sorğusu gönder "/cards/${cardId}"
 * Status kodunun "200" olmalıdır
+* Cavab "api-card.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "id" deyeri "cardId" ile eynidir
 * Json cavabında "maskedPan" deyeri "kartPan" ile eynidir
 * Json cavabında "expiry" deyeri "kartExpiry" ile eynidir

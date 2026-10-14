@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Bill payment (GRAD-302 POST /bill-payments cavabı)",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "amount",
+    "fee",
+    "total",
+    "currency",
+    "balanceAfter",
+    "receiptNo"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^bpm_[a-z0-9]{8}$"
+    },
+    "status": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "minimum": 0.01
+    },
+    "fee": {
+      "type": "number",
+      "minimum": 0
+    },
+    "total": {
+      "type": "number",
+      "minimum": 0.01
+    },
+    "currency": {
+      "type": "string"
+    },
+    "balanceAfter": {
+      "type": "number",
+      "minimum": 0
+    },
+    "receiptNo": {
+      "type": "string",
+      "pattern": "^RCP-[0-9]{8}-[0-9]{6}$"
+    }
+  }
+}

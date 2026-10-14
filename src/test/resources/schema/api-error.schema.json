@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Error (bütün task-lar üçün ümumi xəta formatı)",
+  "type": "object",
+  "required": [
+    "code"
+  ],
+  "properties": {
+    "error": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z_]+$"
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "message"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -27,6 +27,7 @@ tags: api, regression, GRAD-203, positive, state-transition
    |reason|TEMPORARY|
 * "POST" sorğusu gönder "/cards/${cardId}/block"
 * Status kodunun "200" olmalıdır
+* Cavab "api-card-state.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "status" deyeri "FROZEN" beraberdir
 * Json cavabında "blockReason" deyeri "TEMPORARY" beraberdir
 * Json cavabında "blockedAt" deyeri "^[0-9]{4}-[0-9]{2}-[0-9]{2}T.+" regex-ine uyğun olmalıdır

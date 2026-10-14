@@ -18,6 +18,7 @@ tags: api, regression, GRAD-302, positive, smoke
 * "Odenis" adlı "100" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
 * "citynet" təchizatçısına "CN123456" nömrəsi ilə "50" AZN ödəniş göndər
 * Status kodunun "201" olmalıdır
+* Cavab "api-payment.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabını cedvel ile yoxla
    |path        |value                             |
    |------------|----------------------------------|

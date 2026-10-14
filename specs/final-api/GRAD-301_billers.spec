@@ -15,6 +15,7 @@ tags: api, regression, GRAD-301, positive
 * Authorization header-ine tokeni elave et
 * "GET" sorğusu gönder "/billers"
 * Status kodunun "200" olmalıdır
+* Cavab "api-billers.schema.json" JSON schema-sına uyğun olmalıdır
 * Json cavabında "total" deyeri "6" beraberdir
 * Json cavabında "items" massivinin ölçüsü "6" olmalıdır
 * Json cavabında "items.id" siyahısındakı deyerler unikal olmalıdır
