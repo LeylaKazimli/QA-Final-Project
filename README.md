@@ -14,7 +14,7 @@ Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-r
 ```bash
 mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (153 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
-mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (110 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (111 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (106 ssenari, bug-larla)
 ```
 
@@ -72,7 +72,7 @@ Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokato
 | `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027, TC-UI-CMP-001 → BUG-UI-029 (CMP-002 və CART-019 eyni bug səbəbindən Blocked) |
 | `backlog` | Hazırda istifadə olunmur. 12.10-da backlog-a atılan CMP-001/002, CART-019 15.10-da yoxlandı: səbəb lokator deyil, düymələrin saytda görünməməsi idi (BUG-UI-029) |
 
-Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 110 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
+Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 111 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
 
 ### Stabillik
 
@@ -95,7 +95,7 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 |---|---|---|---|
 | API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** (15.10, JSON schema validation daxil) | 6m58s |
 | UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (14.10, bir run-da, BUILD SUCCESS) | 1h00m |
-| UI — regression-a əlavə edilən 10 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012 | **10 / 10 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
+| UI — regression-a əlavə edilən 11 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012, STR-008 | **11 / 11 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
 
 - **JSON schema validation:** 10 task-ın əsas ssenarilərində cavab `src/test/resources/schema/api-*.schema.json` ilə yoxlanılır (`Cavab "..." JSON schema-sına uyğun olmalıdır` step-i).
 - **Manual API icrası (CallMan):** collection və environment export-u `callman/` qovluğundadır; hər task qovluğu Collection Runner ilə icra olunub, assertion-lar keçib.
