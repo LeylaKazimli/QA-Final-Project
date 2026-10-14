@@ -114,20 +114,25 @@ tags: favorites
 
 ## TC-UI-CMP-001 Boş müqayisə səhifəsinin göstərilməsi
 
-tags: compare, smoke, backlog
+tags: compare, smoke, known-bug
+
+BUG-UI-029: boş müqayisə səhifəsində "Alışverişə davam et" və "Səbətə keç" düymələri HTML-də var, amma istifadəçiyə görünmür.
+Bug düzələndə known-bug teqi götürülür və ssenari regression-a qayıdır.
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/muqayise"
 * Sehifede "Müqayisə" yazısı olmalıdır
-* Sehifede "Müqayisə etmək üçün məhsul əlavə olunmayıb" yazısı olmalıdır
-* Sehifede "Alışverişə davam et" yazısı olmalıdır
-* Sehifede "Səbətə keç" yazısı olmalıdır
+* "Bos Muqayise Mesaji" görünür olmalıdır
+* "Bos Muqayise Alisverise Davam Et" görünür olmalıdır
+* "Bos Muqayise Sebete Kec" görünür olmalıdır
 
 ## TC-UI-CMP-002 "Alışverişə davam et" düyməsinin işləməsi
 
-tags: compare, backlog
+tags: compare, known-bug
+
+BUG-UI-029: düymə görünmədiyi üçün klik etmək mümkün deyil (Blocked).
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/muqayise"
-* "Alışverişə davam et" metnli elemente klik et
+* "Bos Muqayise Alisverise Davam Et" elementine klik et
 * Sehifenin tam yüklenmesini gözle
 * "Bos Muqayise Mesaji" görünmemelidir
 * "Header Logo" görünür olmalıdır
@@ -135,10 +140,12 @@ tags: compare, backlog
 
 ## TC-UI-CART-019 Müqayisə səhifəsindəki "Səbətə keç" düyməsi
 
-tags: compare, cart, backlog
+tags: compare, cart, known-bug
+
+BUG-UI-029: düymə görünmədiyi üçün klik etmək mümkün deyil (Blocked).
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/muqayise"
-* "Səbətə keç" metnli elemente klik et
+* "Bos Muqayise Sebete Kec" elementine klik et
 * URL "https://irshad.az/az/sebet" olmalıdır
 
 ## TC-UI-CMP-003 Eyni kateqoriyadan 2 məhsulun müqayisəyə əlavə edilməsi

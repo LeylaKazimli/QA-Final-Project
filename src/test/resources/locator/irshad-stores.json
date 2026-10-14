@@ -50,5 +50,17 @@
   "Bas Ofis Karti": {
     "locatorType": "XPATH",
     "locatorValue": "//ul[@id='centerBranches']//a[contains(@class,'stores__offices__item') and @data-title='Baş ofis']"
+  },
+  "Baki Dublikat Magaza Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@id='centerBranches']//a[contains(@class,'stores__offices__item')][@data-title = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='centerBranches']]/@data-title and @data-address = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='centerBranches']]/@data-address]"
+  },
+  "Bolge Dublikat Magaza Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@id='regionBranches']//a[contains(@class,'stores__offices__item')][@data-title = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='regionBranches']]/@data-title and @data-address = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='regionBranches']]/@data-address]"
+  },
+  "Servis Merkezi Dublikat Magaza Kartlari": {
+    "locatorType": "XPATH",
+    "locatorValue": "//ul[@id='serviceCenters']//a[contains(@class,'stores__offices__item')][@data-title = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='serviceCenters']]/@data-title and @data-address = preceding::a[contains(@class,'stores__offices__item')][ancestor::ul[@id='serviceCenters']]/@data-address]"
   }
 }

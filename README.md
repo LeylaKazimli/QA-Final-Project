@@ -14,7 +14,7 @@ Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-r
 ```bash
 mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (153 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
-mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (100 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (110 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (106 ssenari, bug-larla)
 ```
 
@@ -69,10 +69,10 @@ Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokato
 
 | Teq | Məna |
 |---|---|
-| `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027 |
-| `backlog` | Avtomatlaşdırma tamamlanmayıb (boş müqayisə səhifəsinin düymələri): TC-UI-CMP-001, TC-UI-CMP-002, TC-UI-CART-019 — Excel-də "Not Run: automation backlog" |
+| `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027, TC-UI-CMP-001 → BUG-UI-029 (CMP-002 və CART-019 eyni bug səbəbindən Blocked) |
+| `backlog` | Hazırda istifadə olunmur. 12.10-da backlog-a atılan CMP-001/002, CART-019 15.10-da yoxlandı: səbəb lokator deyil, düymələrin saytda görünməməsi idi (BUG-UI-029) |
 
-Regression run `known-bug` və `backlog` ssenarilərini çıxarır (100 ssenari). Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
+Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 110 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
 
 ### Stabillik
 
@@ -89,12 +89,16 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
-### İcra nəticəsi (14.10.2026)
+### İcra nəticəsi (14–15.10.2026)
 
 | Hissə | Əmr | Nəticə | Müddət |
 |---|---|---|---|
-| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** | 4m45s |
-| UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (bir run-da, BUILD SUCCESS) | 1h00m |
+| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** (15.10, JSON schema validation daxil) | 6m58s |
+| UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (14.10, bir run-da, BUILD SUCCESS) | 1h00m |
+| UI — regression-a əlavə edilən 10 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012 | **10 / 10 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
+
+- **JSON schema validation:** 10 task-ın əsas ssenarilərində cavab `src/test/resources/schema/api-*.schema.json` ilə yoxlanılır (`Cavab "..." JSON schema-sına uyğun olmalıdır` step-i).
+- **Manual API icrası (CallMan):** collection və environment export-u `callman/` qovluğundadır; hər task qovluğu Collection Runner ilə icra olunub, assertion-lar keçib.
 
 Ətraflı hesabat (Allure strukturu üzrə: Overview, Suites, Categories, Trend, hər ssenarinin statusu) Excel faylının **"Test Execution Report"** vərəqindədir. Run müddəti saytın sürətindən asılıdır (eyni regression səhər 21 dəq, axşam 1 saat çəkib).
 

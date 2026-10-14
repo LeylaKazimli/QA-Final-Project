@@ -442,6 +442,19 @@ tags: stores
 * "Baki Magaza Kartlari" elementlerinin sayı en az "1" olmalıdır
 * "Natamam Magaza Kartlari" elementlerinin sayı "0" olmalıdır
 
+## TC-UI-STR-008 Mağaza siyahısında dublikatın olmaması
+
+tags: stores
+
+Hər bölmədə (Bakı, Bölgələr, Servis mərkəzi) eyni ad və eyni ünvanla təkrarlanan kart axtarılır — kartın data-title və data-address atributları əvvəlki kartlarla müqayisə olunur; tapılan sayı 0 olmalıdır.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/magazalar"
+* "Baki Magaza Kartlari" elementlerinin sayı en az "1" olmalıdır
+* "Bolge Magaza Kartlari" elementlerinin sayı en az "1" olmalıdır
+* "Baki Dublikat Magaza Kartlari" elementlerinin sayı "0" olmalıdır
+* "Bolge Dublikat Magaza Kartlari" elementlerinin sayı "0" olmalıdır
+* "Servis Merkezi Dublikat Magaza Kartlari" elementlerinin sayı "0" olmalıdır
+
 ## TC-UI-STR-011 Mağaza siyahısında axtarış (qismən ad ilə)
 
 tags: stores
