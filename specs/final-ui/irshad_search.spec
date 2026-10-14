@@ -139,3 +139,33 @@ tags: cart, e2e
 * "Sebet Ilk Mehsul Sil" elementine klik et
 * "Sebet Mehsul Setirleri" elementlerinin sayı "0" olmalıdır
 * "Header Sebet Sayi" görünmemelidir
+
+## TC-UI-SRCH-014 Boş axtarış sahəsi ilə axtarış (EP: boş dəyər)
+
+tags: search, negative
+
+Ana səhifədən boş sorğu göndəriləndə sayt xəta vermir: boş q ilə ümumi "Məhsullar" səhifəsini açır (15.10.2026 müşahidəsi).
+
+* Brauzeri aç ve keçid et "https://irshad.az/az"
+* Sehifenin tam yüklenmesini gözle
+* "Axtaris Input" elementine "" yaz ve Enter düymesine bas
+* URL "/az/mehsullar?q=" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Breadcrumb Elementleri" elementlerinin sayı "2" olmalıdır
+* Sehifede "Məhsullar" yazısı olmalıdır
+* "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-SRCH-015 Yalnız boşluqlardan ibarət axtarış (EP: boşluq)
+
+tags: search, negative
+
+Yalnız boşluqdan ibarət sorğu boş sorğu kimi işlənməlidir (TC-UI-SRCH-014 ilə eyni davranış): ümumi "Məhsullar" səhifəsi, xəta yoxdur.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az"
+* Sehifenin tam yüklenmesini gözle
+* "Axtaris Input" elementine "     " yaz ve Enter düymesine bas
+* URL "/az/mehsullar?q=" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Breadcrumb Elementleri" elementlerinin sayı "2" olmalıdır
+* Sehifede "Məhsullar" yazısı olmalıdır
+* "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır

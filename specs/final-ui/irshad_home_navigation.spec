@@ -451,3 +451,44 @@ tags: stores
 * "Magaza Axtaris Input" elementine "yasa" yaz
 * "Yasamal Magaza Karti" görünür olmalıdır
 * "Bas Ofis Karti" görünmemelidir
+
+## TC-UI-NAV-011 Filtrli siyahıdan məhsula keçib "Geri" qayıdanda filtrin saxlanması
+
+tags: navigation, filter
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* Sehifenin tam yüklenmesini gözle
+* "400" piksel vertical scroll et
+* "Brend Samsung" elementine klik et
+* "Brend Samsung Checkbox" seçilmiş olmalıdır
+* URL "brands" içermelidir
+* Sehifeni yenile
+* "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
+* "Samsung Mehsul Adlari" siyahısında "1" nömreli elemente klik et
+* URL "/az/mehsullar/" içermelidir
+* Evvelki sehifeye qayıt
+* Sehifenin tam yüklenmesini gözle
+* URL "brands" içermelidir
+* "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
+* "Samsung Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-NAV-012 Mövcud olmayan kateqoriya URL-inin 404 ilə idarə olunması
+
+tags: navigation, negative
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/olmayan-kateqoriya-qa123"
+* Sehifede "404" yazısı olmalıdır
+* Sehifede "Axtardığınız səhifə tapılmadı" yazısı olmalıdır
+* "Header Logo" görünür olmalıdır
+* "Kataloq Button" görünür olmalıdır
+* "Footer" görünür olmalıdır
+
+## TC-UI-NAV-013 Mövcud olmayan məhsul URL-inin 404 ilə idarə olunması
+
+tags: navigation, negative
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/mehsullar/olmayan-mehsul-qa123"
+* Sehifede "404" yazısı olmalıdır
+* Sehifede "Axtardığınız səhifə tapılmadı" yazısı olmalıdır
+* "PDP Basliq" sehifede mövcud olmamalıdır
+* "PDP Sebete Elave Button" sehifede mövcud olmamalıdır

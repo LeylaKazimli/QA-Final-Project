@@ -414,3 +414,45 @@ tags: cart
 * "Sebet Mehsul Setirleri" elementlerinin sayı "1" olmalıdır
 * "Sebet Ilk Mehsul Adi" elementinin metni "iPhone Air 256 GB Cloud White" olmalıdır
 * "Sebet Ilk Mehsul Sayi" input deyeri "1" olmalıdır
+
+## TC-UI-FLTB-007 Səhifə yenilənəndə (F5) brend filtrinin saxlanması
+
+tags: filter
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* Sehifenin tam yüklenmesini gözle
+* "400" piksel vertical scroll et
+* "Brend Samsung" elementine klik et
+* "Brend Samsung Checkbox" seçilmiş olmalıdır
+* URL "brands" içermelidir
+* Sehifeni yenile
+* Sehifenin tam yüklenmesini gözle
+* URL "brands" içermelidir
+* "Brend Samsung Checkbox" seçilmiş olmalıdır
+* "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
+* "Samsung Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-FLTP-009 Mənfi qiymətin daxil edilməsi
+
+tags: filter, negative
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* "Qiymet Min Input" elementini temizle
+* URL "price_from=&" içermelidir
+* "Qiymet Min Input" elementine "-100" yaz ve Tab düymesine bas
+* "Qiymet Min Input" input deyeri "100" olmalıdır
+* URL "price_from=100" içermelidir
+* Sehifeni yenile
+* "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-FLTP-010 Qiymət sahəsinə hərf daxil edilməsi
+
+tags: filter, negative
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* "Qiymet Min Input" elementini temizle
+* URL "price_from=&" içermelidir
+* "Qiymet Min Input" elementine "abc" yaz ve Tab düymesine bas
+* "Qiymet Min Input" input deyeri "" olmalıdır
+* URL "price_from=&" içermelidir
+* "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır

@@ -156,3 +156,18 @@ tags: smoke
 * "Sebet Ilk Mehsul Adi" elementinin metni "iPhone Air 256 GB Cloud White" olmalıdır
 * "Sebet Ilk Mehsul Sayi" input deyeri "2" olmalıdır
 * "Sebet Cemi 2 Ededin Qiymetine Beraber" elementlerinin sayı "1" olmalıdır
+
+## TC-UI-CART-005 Say = 1 olanda azaltma (BVA: minimum say)
+
+tags: cart, negative, bva
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/mehsullar/iphone-air-256-gb-cloud-white"
+* "PDP Sebete Elave Button" elementine klik et
+* "Header Sebet Sayi" elementinin metni "1" olmalıdır
+* "https://irshad.az/az/sebet" adresine keçid et
+* "Sebet Ilk Mehsul Sayi" input deyeri "1" olmalıdır
+* "Sebet Ilk Mehsul Minus" elementine klik et
+* Sehifeni yenile
+* "Sebet Ilk Mehsul Sayi" input deyeri "1" olmalıdır
+* "Sebet Ilk Mehsul Adi" elementin içinde "iPhone Air 256 GB" yazısı var
+* "Header Sebet Sayi" elementinin metni "1" olmalıdır

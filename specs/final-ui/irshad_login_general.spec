@@ -93,3 +93,14 @@ tags: home, login
 * Sehifenin tam yüklenmesini gözle
 * Sehifede "Axtardığınız səhifə tapılmadı" yazısı olmalıdır
 * Sehifede "404" yazısı olmalıdır
+
+## TC-UI-LOGIN-012 Giriş səhifəsində loqo ilə ana səhifəyə qayıtmaq
+
+tags: login, navigation
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/giris"
+* "Giris Basligi" görünür olmalıdır
+* "Giris Sehifesi Logo" elementine klik et
+* URL "https://irshad.az/az" olmalıdır
+* "Kataloq Button" görünür olmalıdır
+

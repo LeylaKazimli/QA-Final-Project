@@ -14,5 +14,9 @@
   "Giris Basligi": {
     "locatorType": "XPATH",
     "locatorValue": "//*[self::h1 or self::h2 or self::h3][normalize-space()='Giriş']"
+  },
+  "Giris Sehifesi Logo": {
+    "locatorType": "XPATH",
+    "locatorValue": "//header[contains(@class,'header--auth')]//div[contains(@class,'header__bottom__logo')]/a[@href='https://irshad.az/az']"
   }
 }

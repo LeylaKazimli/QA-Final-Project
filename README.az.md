@@ -89,12 +89,16 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
-### İcra nəticəsi (14.10.2026)
+### İcra nəticəsi (14–15.10.2026)
 
 | Hissə | Əmr | Nəticə | Müddət |
 |---|---|---|---|
-| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** | 4m45s |
-| UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (bir run-da, BUILD SUCCESS) | 1h00m |
+| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** (15.10, JSON schema validation daxil) | 6m58s |
+| UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (14.10, bir run-da, BUILD SUCCESS) | 1h00m |
+| UI — regression-a əlavə edilən 9 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005 | **9 / 9 Passed** (15.10, ayrıca run-larda; 7-si 3 dəfə run olunub) | 5m49s |
+
+- **JSON schema validation:** 10 task-ın əsas ssenarilərində cavab `src/test/resources/schema/api-*.schema.json` ilə yoxlanılır (`Cavab "..." JSON schema-sına uyğun olmalıdır` step-i).
+- **Manual API icrası (CallMan):** collection və environment export-u `callman/` qovluğundadır; hər task qovluğu Collection Runner ilə icra olunub, assertion-lar keçib.
 
 Ətraflı hesabat (Allure strukturu üzrə: Overview, Suites, Categories, Trend, hər ssenarinin statusu) Excel faylının **"Test Execution Report"** vərəqindədir. Run müddəti saytın sürətindən asılıdır (eyni regression səhər 21 dəq, axşam 1 saat çəkib).
 
