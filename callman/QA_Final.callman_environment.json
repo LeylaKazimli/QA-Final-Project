@@ -1,0 +1,23 @@
+{
+  "name": "QA Final",
+  "variables": {
+    "baseUrl": "https://api.anarabbas.com",
+    "benId": "",
+    "cardId": "",
+    "token_user1": "",
+    "token_user2": "",
+    "token_admin": "",
+    "runId": "",
+    "key8": "",
+    "c018": "",
+    "cardId2": "",
+    "newCardId": "",
+    "c19_1": "",
+    "c19_2": "",
+    "c19_3": "",
+    "c20_1": "",
+    "c20_2": "",
+    "c20_3": "",
+    "c20_new": ""
+  }
+}
