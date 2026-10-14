@@ -8,8 +8,10 @@ Yalnız BVA testləri (FLTP-002/003/004) və A kartını tapmaq üçün qiymət 
 Qiymət sahələri onluq qəbul etmir (BUG-UI-015) — BVA testlərində TC-dəki qayda ilə tam ədəd sərhədlər işlədilir (P+1 / P−1 əvəzinə 2510 / 2509).
 "... Kenar Qiymetler", "... Pozuntulari" lokatorları qaydanı pozan elementləri tapır — onların sayı 0 olmalıdır.
 Yoxlamalar siyahının birinci hissəsinə (ilk yüklənən kartlara) aiddir. Hər ssenari yeni brauzer sessiyası ilə başlayır.
-Qiymət sahəsi təmizlənəndə (clear) sayt dərhal ayrıca filtr sorğusu göndərir; növbəti dəyər yalnız bu sorğu bitəndən (URL-də boş parametr
-görünəndən) sonra yazılır — əks halda sorğuların cavabları qarışır və siyahı köhnə qalırdı (11.10.2026). Filtr Tab (blur) ilə tətbiq olunur.
+Qiymət sahəsi təmizlənəndə (clear) sayt dərhal ayrıca filtr sorğusu göndərir; növbəti dəyər yalnız URL-də boş parametr görünəndən sonra yazılır.
+Filtr Tab (blur) ilə tətbiq olunur. Sayt köhnə filtr sorğusunu ləğv etmir: gec gələn köhnə cavab yeni nəticənin üstünə yazıla bilir
+(URL düzgün, siyahı köhnə — BUG-UI-028). Ona görə filtr URL-də tam tətbiq olunandan sonra səhifə yenilənir və siyahı həmin URL üzrə
+serverdən yüklənmiş vəziyyətdə yoxlanılır — nəticə sorğuların cavab ardıcıllığından asılı olmur (flaky deyil).
 
 tags: ui, irshad, catalog
 
@@ -154,12 +156,13 @@ tags: filter, smoke
 * URL "price_from=&" içermelidir
 * "Qiymet Min Input" elementine "500" yaz ve Tab düymesine bas
 * "Qiymet Min Input" input deyeri "500" olmalıdır
-* "500-den Asagi Qiymetler" elementlerinin sayı "0" olmalıdır
+* URL "price_from=500" içermelidir
 * "Qiymet Max Input" elementini temizle
 * URL "price_to=&" içermelidir
 * "Qiymet Max Input" elementine "1000" yaz ve Tab düymesine bas
 * "Qiymet Max Input" input deyeri "1000" olmalıdır
 * URL "price_to=1000" içermelidir
+* Sehifeni yenile
 * "500-1000 Araligindan Kenar Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
 
@@ -174,12 +177,13 @@ tags: filter, bva
 * URL "price_from=&" içermelidir
 * "Qiymet Min Input" elementine "2509" yaz ve Tab düymesine bas
 * "Qiymet Min Input" input deyeri "2509" olmalıdır
-* "2509-dan Asagi Qiymetler" elementlerinin sayı "0" olmalıdır
+* URL "price_from=2509" içermelidir
 * "Qiymet Max Input" elementini temizle
 * URL "price_to=&" içermelidir
 * "Qiymet Max Input" elementine "2510" yaz ve Tab düymesine bas
 * "Qiymet Max Input" input deyeri "2510" olmalıdır
 * URL "price_to=2510" içermelidir
+* Sehifeni yenile
 * "2509-2510 Araligindan Kenar Qiymetler" elementlerinin sayı "0" olmalıdır
 * "A Mehsulu Siyahida" elementlerinin sayı en az "1" olmalıdır
 
@@ -197,6 +201,7 @@ tags: filter, bva
 * "Qiymet Min Input" elementine "2510" yaz ve Tab düymesine bas
 * "Qiymet Min Input" input deyeri "2510" olmalıdır
 * URL "price_from=2510" içermelidir
+* Sehifeni yenile
 * "2510-dan Asagi Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
 * "A Mehsulu Siyahida" sehifede mövcud olmamalıdır
@@ -215,6 +220,7 @@ tags: filter, bva
 * "Qiymet Max Input" elementine "2509" yaz ve Tab düymesine bas
 * "Qiymet Max Input" input deyeri "2509" olmalıdır
 * URL "price_to=2509" içermelidir
+* Sehifeni yenile
 * "2509-dan Yuxari Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
 * "A Mehsulu Siyahida" sehifede mövcud olmamalıdır
@@ -231,6 +237,7 @@ tags: filter
 * "Qiymet Min Input" elementine "2000" yaz ve Tab düymesine bas
 * "Qiymet Min Input" input deyeri "2000" olmalıdır
 * URL "price_from=2000" içermelidir
+* Sehifeni yenile
 * "2000-den Asagi Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
 
@@ -246,6 +253,7 @@ tags: filter
 * "Qiymet Max Input" elementine "300" yaz ve Tab düymesine bas
 * "Qiymet Max Input" input deyeri "300" olmalıdır
 * URL "price_to=300" içermelidir
+* Sehifeni yenile
 * "300-den Yuxari Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
 
@@ -262,12 +270,13 @@ tags: filter
 * URL "price_from=&" içermelidir
 * "Qiymet Min Input" elementine "500" yaz ve Tab düymesine bas
 * "Qiymet Min Input" input deyeri "500" olmalıdır
-* "500-den Asagi Qiymetler" elementlerinin sayı "0" olmalıdır
+* URL "price_from=500" içermelidir
 * "Qiymet Max Input" elementini temizle
 * URL "price_to=&" içermelidir
 * "Qiymet Max Input" elementine "1500" yaz ve Tab düymesine bas
 * "Qiymet Max Input" input deyeri "1500" olmalıdır
 * URL "price_to=1500" içermelidir
+* Sehifeni yenile
 * "500-1500 Araligindan Kenar Qiymetler" elementlerinin sayı "0" olmalıdır
 * "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 * "Samsung Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır

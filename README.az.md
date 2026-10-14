@@ -79,7 +79,7 @@ Regression run `known-bug` və `backlog` ssenarilərini çıxarır (100 ssenari)
 - Hər ssenari yeni brauzer sessiyası ilə başlayır (qonaq istifadəçi, boş səbət / bəyəndiklər / müqayisə) — ssenarilər bir-birindən asılı deyil.
 - `Thread.sleep` və JavaScript klik istifadə edilmir: bütün yoxlamalar framework-ün gözləmə mexanizmi (`assertEventually`) ilə aparılır.
 - Siyahı yoxlamaları (filtr, sıralama) qaydanı **pozan** elementləri tapan XPath-lərlə yazılıb; onların sayı 0 olmalıdır (məs. "Artan Sira Pozuntulari").
-- Qiymət filtrində sahə təmizlənən kimi sayt ayrıca sorğu göndərir; növbəti dəyər yalnız URL yeniləndikdən sonra yazılır — sorğuların cavabları qarışmır.
+- Qiymət filtrində sahə təmizlənən kimi sayt ayrıca sorğu göndərir və köhnə sorğunu ləğv etmir: gec gələn köhnə cavab yeni nəticənin üstünə yazıla bilir (URL düzgün, siyahı köhnə — **BUG-UI-028**). Ona görə filtr URL-də tam tətbiq olunandan sonra səhifə yenilənir və siyahı həmin URL üzrə yoxlanılır — nəticə cavabların ardıcıllığından asılı deyil, test flaky deyil.
 - Real sifariş verilmir, "Daxil ol" düyməsinə real nömrə ilə basılmır.
 
 ### Test datası
@@ -89,11 +89,19 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
-### İcra nəticəsi (13–14.10.2026)
+### İcra nəticəsi (14.10.2026)
 
-Regression (`!known-bug & !backlog`) spec-lər üzrə ayrı-ayrı işə salınıb: **100 Passed, 0 Failed**; bug-ları tutan ssenarilər də daxil olmaqla 101 icrada pass rate **99%** (yeganə Failed — TC-UI-HOME-007, BUG-UI-025). Ətraflı hesabat (Allure strukturu üzrə: Overview, Suites, Categories, Trend, hər ssenarinin statusu) Excel faylının **"Test Execution Report"** vərəqindədir.
+| Hissə | Əmr | Nəticə | Müddət |
+|---|---|---|---|
+| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** | 4m45s |
+| UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (bir run-da, BUILD SUCCESS) | 1h00m |
 
-- Bəzi ssenarilər ilk cəhddə **Broken** olub: səhifə 5 dəqiqə ərzində yüklənməyib (`TimeoutException`, test yoxlama addımına çatmayıb) və təkrar run-da keçib. Səbəb test məntiqi deyil, mühitdir: saytdakı Facebook tracker sorğusu (`connect.facebook.net`) bəzən səhifənin yüklənməsini saxlayır.
+Ətraflı hesabat (Allure strukturu üzrə: Overview, Suites, Categories, Trend, hər ssenarinin statusu) Excel faylının **"Test Execution Report"** vərəqindədir. Run müddəti saytın sürətindən asılıdır (eyni regression səhər 21 dəq, axşam 1 saat çəkib).
+
+Stabillik üçün edilənlər (flaky test qalmayıb):
+- 12–13.10-da bəzi səhifələr 5 dəqiqə ərzində yüklənmirdi (`TimeoutException`) — səbəb saytdakı Facebook tracker sorğusu (`connect.facebook.net`) idi; test kompüterində bu sorğu bloklandıqdan sonra timeout olmayıb.
+- Qiymət filtri: saytın köhnə AJAX cavabı yeni nəticənin üstünə yazılırdı (**BUG-UI-028**) — testlər filtr URL-də tətbiq olunandan sonra səhifəni yeniləyib yoxlayır.
+- Müqayisədən silmə (CMP-004/005): silmədən sonra səhifə yenidən yüklənir; test başlığın yox olmasını (maks. 60 s, şərt ödənən kimi davam edir) və səhifənin tam yüklənməsini gözləyir. `Thread.sleep` istifadə edilmir.
 - Tək ssenarini təkrar işə salmaq üçün spec-dəki sətir nömrəsi göstərilir: `mvn test "-Dgauge.specs.dir=specs/final-ui/irshad_search.spec:99"`
 
 > Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"`

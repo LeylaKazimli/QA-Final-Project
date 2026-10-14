@@ -176,6 +176,8 @@ tags: compare
 * "https://irshad.az/az/muqayise" adresine keçid et
 * "Muqayise Mehsul Basliqlari" elementlerinin sayı "2" olmalıdır
 * "Muqayise A Sil" elementine klik et
+* "Muqayise A Basligi" yox olana qeder maksimum "60" saniye gözle
+* Sehifenin tam yüklenmesini gözle
 * "Muqayise A Basligi" sehifede mövcud olmamalıdır
 * "Muqayise B Basligi" görünür olmalıdır
 * "Muqayise Mehsul Basliqlari" elementlerinin sayı "1" olmalıdır
@@ -190,6 +192,8 @@ tags: compare
 * "https://irshad.az/az/muqayise" adresine keçid et
 * "Muqayise B Basligi" görünür olmalıdır
 * "Muqayise B Sil" elementine klik et
+* "Muqayise B Basligi" yox olana qeder maksimum "60" saniye gözle
+* Sehifenin tam yüklenmesini gözle
 * Sehifede "Müqayisə etmək üçün məhsul əlavə olunmayıb" yazısı olmalıdır
 * "Muqayise Mehsul Basliqlari" elementlerinin sayı "0" olmalıdır
 
