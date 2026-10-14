@@ -169,3 +169,20 @@ Yalnız boşluqdan ibarət sorğu boş sorğu kimi işlənməlidir (TC-UI-SRCH-0
 * "Breadcrumb Elementleri" elementlerinin sayı "2" olmalıdır
 * Sehifede "Məhsullar" yazısı olmalıdır
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-SRCH-019 Xüsusi simvollar və SQL tipli sorğu ilə axtarış
+
+tags: search, negative, security, known-bug
+
+BUG-UI-011: "%" joker (wildcard) kimi işlənir və bütün kataloqu qaytarır. SQL tipli sorğu xətasız işlənir (keçir), "%" yoxlaması bug-ı tutur.
+Bug düzələndə known-bug teqi götürülür və ssenari regression-a qayıdır.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az"
+* "Axtaris Input" elementine "' OR 1=1 --" yaz ve Enter düymesine bas
+* "Axtaris Basligi" elementin içinde "üzrə axtarış" yazısı var
+* "xpath=//*[contains(normalize-space(.),'SQLSTATE') or contains(normalize-space(.),'syntax error') or contains(normalize-space(.),'Stack trace')]" elementlerinin sayı "0" olmalıdır
+* "https://irshad.az/az" adresine keçid et
+* "Axtaris Input" elementine "%" yaz ve Enter düymesine bas
+* "Axtaris Basligi" elementin içinde "% üzrə axtarış" yazısı var
+* "xpath=//div[@id='productGridItems']//a[contains(@class,'product__name')][not(contains(normalize-space(.),'%'))]" elementlerinin sayı "0" olmalıdır
+

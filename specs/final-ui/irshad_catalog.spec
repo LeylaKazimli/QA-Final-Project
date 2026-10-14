@@ -456,3 +456,23 @@ tags: filter, negative
 * "Qiymet Min Input" input deyeri "" olmalıdır
 * URL "price_from=&" içermelidir
 * "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
+
+## TC-UI-FLTP-008 Min-in max-dan böyük daxil edilməsi
+
+tags: filter, negative, known-bug
+
+BUG-UI-014: min > max aralığı xəbərdarlıqsız qəbul olunur, siyahı mesajsız boş qalır.
+Gözlənilən: sistem məntiqsiz aralığı qəbul etmir (dəyərləri yerini dəyişir və ya filtri tətbiq etmir) — hər iki halda siyahıda məhsul qalır.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* "Qiymet Min Input" elementini temizle
+* URL "price_from=&" içermelidir
+* "Qiymet Min Input" elementine "2000" yaz ve Tab düymesine bas
+* URL "price_from=2000" içermelidir
+* "Qiymet Max Input" elementini temizle
+* URL "price_to=&" içermelidir
+* "Qiymet Max Input" elementine "1000" yaz ve Tab düymesine bas
+* URL "price_to=1000" içermelidir
+* Sehifeni yenile
+* "Siyahi Gorunen Qiymetler" elementlerinin sayı en az "1" olmalıdır
+

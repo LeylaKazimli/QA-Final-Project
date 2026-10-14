@@ -69,7 +69,7 @@ Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokato
 
 | Teq | Məna |
 |---|---|
-| `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027, TC-UI-CMP-001 → BUG-UI-029 (CMP-002 və CART-019 eyni bug səbəbindən Blocked) |
+| `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027, TC-UI-CMP-001 → BUG-UI-029 (CMP-002 və CART-019 eyni bug səbəbindən Blocked), TC-UI-SRCH-019 → BUG-UI-011, TC-UI-FLTP-008 → BUG-UI-014 |
 | `backlog` | Hazırda istifadə olunmur. 12.10-da backlog-a atılan CMP-001/002, CART-019 15.10-da yoxlandı: səbəb lokator deyil, düymələrin saytda görünməməsi idi (BUG-UI-029) |
 
 Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 111 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
