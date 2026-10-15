@@ -82,6 +82,7 @@ tags: filter, smoke
 * "400" piksel vertical scroll et
 * "Brend Samsung" elementine klik et
 * "Brend Samsung Checkbox" seçilmiş olmalıdır
+* "Grid Yalniz Samsung" elementlerinin sayı "1" olmalıdır
 * "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 * "Samsung Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
 
@@ -94,6 +95,7 @@ tags: filter
 * "400" piksel vertical scroll et
 * "Brend Apple" elementine klik et
 * "Brend Apple Checkbox" seçilmiş olmalıdır
+* "Grid Yalniz Apple" elementlerinin sayı "1" olmalıdır
 * "Apple Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 * "Apple Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
 
@@ -111,6 +113,7 @@ tags: filter
 * "Brend Samsung Checkbox" seçilmiş olmalıdır
 * "Samsung Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
 * "Apple Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
+* "Grid Yalniz Apple ve Samsung" elementlerinin sayı "1" olmalıdır
 * "Apple ve Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 
 ## TC-UI-FLTB-004 Brend seçimini ləğv edəndə siyahının ilkin vəziyyətə qayıtması
@@ -136,6 +139,18 @@ tags: filter, known-bug
 * "Siyahi Mehsul Adi 4" elementinin metni "${ad4}" olmalıdır
 * "Siyahi Mehsul Adi 5" elementinin metni "${ad5}" olmalıdır
 
+## TC-UI-FLTB-006 Filtrli səhifə linkinin yeni sessiyada eyni nəticəni açması
+
+tags: filter
+
+Hər ssenari yeni brauzer sessiyası ilə başlayır (cookie və kəş yoxdur) — paylaşılan linkin başqa istifadəçidə açılması kimidir.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar?brands[]=7"
+* Sehifenin tam yüklenmesini gözle
+* "Brend Samsung Checkbox" seçilmiş olmalıdır
+* "Grid Yalniz Samsung" elementlerinin sayı "1" olmalıdır
+* "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
+
 ## TC-UI-FLTB-010 Az məhsullu brendin (HMD) filtrlənməsi
 
 tags: filter
@@ -144,6 +159,7 @@ tags: filter
 * Sehifenin tam yüklenmesini gözle
 * "400" piksel vertical scroll et
 * "Brend HMD" elementine klik et
+* "Grid Yalniz HMD" elementlerinin sayı "1" olmalıdır
 * "HMD Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 * "HMD Mehsul Adlari" elementlerinin sayı en az "1" olmalıdır
 

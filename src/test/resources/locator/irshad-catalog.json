@@ -286,5 +286,21 @@
   "RU Ust Xett Magazalar": {
     "locatorType": "XPATH",
     "locatorValue": "//div[contains(@class,'header__top')]//ul[contains(@class,'main_nav__list')]/li[2]/a"
+  },
+  "Grid Yalniz Samsung": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems'][.//a[contains(@class,'product__name')]][not(.//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'samsung'))])]"
+  },
+  "Grid Yalniz Apple": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems'][.//a[contains(@class,'product__name')]][not(.//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'iphone') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apple'))])]"
+  },
+  "Grid Yalniz HMD": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems'][.//a[contains(@class,'product__name')]][not(.//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'hmd'))])]"
+  },
+  "Grid Yalniz Apple ve Samsung": {
+    "locatorType": "XPATH",
+    "locatorValue": "//div[@id='productGridItems'][.//a[contains(@class,'product__name')]][not(.//a[contains(@class,'product__name')][not(contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'iphone') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apple') or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'samsung'))])]"
   }
 }
