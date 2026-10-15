@@ -178,5 +178,9 @@
   "Azerbaycan Dili Link": {
     "locatorType": "XPATH",
     "locatorValue": "//a[@class='localization-link' and @data-locale='az']"
+  },
+  "Sehife 404 Mesaji": {
+    "locatorType": "XPATH",
+    "locatorValue": "//*[text()[contains(.,'Axtardığınız səhifə tapılmadı')]]"
   }
 }

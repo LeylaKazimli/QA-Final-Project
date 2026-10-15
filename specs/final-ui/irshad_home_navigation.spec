@@ -117,22 +117,38 @@ tags: home
 * Brauzeri aç ve keçid et "https://irshad.az/az"
 * "Ust Xett Kampaniyalar" elementine klik et
 * URL "/az/kampaniyalar" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Magazalar" elementine klik et
 * URL "/az/magazalar" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Korporativ" elementine klik et
 * URL "/az/musteri-ucun/korporativ-satislar" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Samsung" elementine klik et
 * URL "/brend/samsung" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Apple" elementine klik et
 * URL "/brend/apple" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Honor" elementine klik et
 * URL "/brend/honor" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Ust Xett Outlet" elementine klik et
 * URL "/az/outlet" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az" adresine keçid et
 * "Ust Xett Movsumi Kampaniya Linki" elementinin "href" atributunu "kampaniyaLinki" olaraq yadda saxla
 * "Ust Xett Movsumi Kampaniya Linki" elementine klik et
 * URL "${kampaniyaLinki}" içermelidir
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "Header Logo" görünür olmalıdır
 
 ## TC-UI-NAV-001 Menyudan Mobil telefonlar kateqoriyasına keçid
@@ -497,6 +513,7 @@ tags: navigation, negative
 * Brauzeri aç ve keçid et "https://irshad.az/az/olmayan-kateqoriya-qa123"
 * Sehifede "404" yazısı olmalıdır
 * Sehifede "Axtardığınız səhifə tapılmadı" yazısı olmalıdır
+* "Sehife 404 Mesaji" görünür olmalıdır
 * "Header Logo" görünür olmalıdır
 * "Kataloq Button" görünür olmalıdır
 * "Footer" görünür olmalıdır
