@@ -89,7 +89,7 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
-### İcra nəticəsi (14–15.10.2026) — yekun: API 154/154, UI 110/110
+### İcra nəticəsi (14–15.10.2026) — yekun: API 154/154, UI 112/112
 
 | Hissə | Əmr | Nəticə | Müddət |
 |---|---|---|---|
@@ -97,8 +97,9 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 | UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (14.10, bir run-da, BUILD SUCCESS) | 1h00m |
 | UI — regression-a əlavə edilən 11 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012, STR-008 | **11 / 11 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
 | UI regression (15.10, təkrar) | eyni əmr | **110 / 111** → CMP-005 arabir fail etdi; Gauge ekran şəkli saytın bug-ını göstərdi (**BUG-UI-031**), ssenari `known-bug`-a keçirildi — regression indi 110 ssenaridir | 20m |
-| **UI regression — yekun (15.10)** | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **110 / 110 Passed** (bir run-da, BUILD SUCCESS) | ~30m |
-| UI — review düzəlişlərindən sonra (15.10) | HOME-012, LANG-001/002/003 (hər biri 2 run), `irshad_home_navigation.spec` tam (NAV-005 yeni avtomat ssenari daxil) | **Passed** — məzmun yoxlamaları gücləndirildi: 404 yoxlaması, H1, məhsul kartları, breadcrumb sırası; SRCH-012 dublikat idi — sahənin dəyərini yoxlayır, BUG-UI-033 tapdı və known-bug oldu; SRCH-018 (XSS) avtomatlaşdırıldı — 2 yük, hadisə əsaslı onerror daxil; brend filtrlərində atomik yoxlama (yalançı Pass riski aradan qaldırıldı), FLTB-006 avtomatlaşdırıldı; regression 112 ssenari | — |
+| UI regression (15.10, review-dan əvvəl) | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **110 / 110 Passed** (bir run-da, BUILD SUCCESS) | ~30m |
+| UI — review düzəlişlərindən sonra (15.10) | HOME-012, LANG-001/002/003 (hər biri 2 run), `irshad_home_navigation.spec` tam (NAV-005 yeni avtomat ssenari daxil) | **Passed** — məzmun yoxlamaları gücləndirildi: 404 yoxlaması, H1, məhsul kartları, breadcrumb sırası; SRCH-012 dublikat idi — sahənin dəyərini yoxlayır, BUG-UI-033 tapdı və known-bug oldu; SRCH-018 (XSS) avtomatlaşdırıldı — 2 yük, hadisə əsaslı onerror daxil; brend filtrlərində atomik yoxlama (yalançı Pass riski aradan qaldırıldı), FLTB-006 avtomatlaşdırıldı; FT-002-yə 404 yoxlaması, SORT-007 atomik yoxlama, STR-002/003/004 dinamik saylar; regression 112 ssenari | — |
+| **UI regression — yekun, review-dan sonra (15.10)** | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **112 / 112 Passed** (bir run-da, BUILD SUCCESS) | 34m32s |
 
 - **JSON schema validation:** 10 task-ın əsas ssenarilərində cavab `src/test/resources/schema/api-*.schema.json` ilə yoxlanılır (`Cavab "..." JSON schema-sına uyğun olmalıdır` step-i).
 - **Manual API icrası (CallMan):** collection və environment export-u `callman/` qovluğundadır; hər task qovluğu Collection Runner ilə icra olunub, assertion-lar keçib.

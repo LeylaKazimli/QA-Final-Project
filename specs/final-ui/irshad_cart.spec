@@ -117,6 +117,7 @@ tags: smoke
 * "https://irshad.az/az/sebet" adresine keçid et
 * "Sebet Ilk Mehsul Adi" elementine klik et
 * URL "/az/mehsullar/iphone-air-256-gb-cloud-white" içermelidir
+* "PDP Basliq" elementinin metni "iPhone Air 256 GB Cloud White" olmalıdır
 
 ## TC-UI-CART-013 Səbətdən məhsulun silinməsi
 

@@ -356,6 +356,7 @@ tags: sort, filter
 * "Siralama Select" dropdown-undan "Əvvəlcə ucuz" metnini seç
 * URL "direction=asc&sort=price" içermelidir
 * "Brend Samsung Checkbox" seçilmiş olmalıdır
+* "Grid Yalniz Samsung" elementlerinin sayı "1" olmalıdır
 * "Artan Sira Pozuntulari" elementlerinin sayı "0" olmalıdır
 * "Samsung Olmayan Mehsul Adlari" elementlerinin sayı "0" olmalıdır
 * "Samsung Mehsul Adlari" elementlerinin sayı en az "2" olmalıdır

@@ -380,45 +380,59 @@ Qeyd: footer linklərinə birbaşa klik "element click intercepted" xətası ver
 * "https://irshad.az/az/sirket/haqqimizda" adresine keçid et
 * URL "/az/sirket/haqqimizda" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/magazalar" adresine keçid et
 * URL "/az/magazalar" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/sirket/vakansiyalar" adresine keçid et
 * URL "/az/sirket/vakansiyalar" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/kampaniyalar" adresine keçid et
 * URL "/az/kampaniyalar" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/sertlerimiz" adresine keçid et
 * URL "/az/musteri-ucun/sertlerimiz" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/catdirilma-qaydalari" adresine keçid et
 * URL "/az/musteri-ucun/catdirilma-qaydalari" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/bonuslardan-istifade-qaydalari" adresine keçid et
 * URL "/az/musteri-ucun/bonuslardan-istifade-qaydalari" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/sual-cavab" adresine keçid et
 * URL "/az/musteri-ucun/sual-cavab" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/hisse-hisse-oedenis" adresine keçid et
 * URL "/az/musteri-ucun/hisse-hisse-oedenis" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/mexfilik-siyaseti" adresine keçid et
 * URL "/az/musteri-ucun/mexfilik-siyaseti" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/korporativ-satislar" adresine keçid et
 * URL "/az/musteri-ucun/korporativ-satislar" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/istifade-qaydalari" adresine keçid et
 * URL "/az/musteri-ucun/istifade-qaydalari" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/bloq" adresine keçid et
 * URL "/az/musteri-ucun/bloq" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/musteri-ucun/sikayet-ve-teklifler" adresine keçid et
 * URL "/az/musteri-ucun/sikayet-ve-teklifler" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 
 ## TC-UI-FT-005 Footer-in bütün əsas səhifələrdə eyni olması
 
@@ -459,8 +473,8 @@ tags: stores
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/magazalar"
 * "Tab Baki uzre" elementine klik et
-* "Tab Baki uzre" elementin içinde "(27)" yazısı var
-* "Baki Magaza Kartlari" elementlerinin sayı "27" olmalıdır
+* "Baki Magaza Kartlari" elementlerinin sayı en az "1" olmalıdır
+* "xpath=//a[contains(@class,'branch-category') and contains(normalize-space(),'Bakı üzrə') and contains(normalize-space(),concat('(',count(//ul[@id='centerBranches']//a[contains(@class,'stores__offices__item')]),')'))]" elementlerinin sayı "1" olmalıdır
 
 ## TC-UI-STR-003 "Bölgələr üzrə" bölməsindəki sayın siyahıya bərabər olması
 
@@ -468,8 +482,8 @@ tags: stores
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/magazalar"
 * "Tab Bolgeler uzre" elementine klik et
-* "Tab Bolgeler uzre" elementin içinde "(31)" yazısı var
-* "Bolge Magaza Kartlari" elementlerinin sayı "31" olmalıdır
+* "Bolge Magaza Kartlari" elementlerinin sayı en az "1" olmalıdır
+* "xpath=//a[contains(@class,'branch-category') and contains(normalize-space(),'Bölgələr üzrə') and contains(normalize-space(),concat('(',count(//ul[@id='regionBranches']//a[contains(@class,'stores__offices__item')]),')'))]" elementlerinin sayı "1" olmalıdır
 
 ## TC-UI-STR-004 "Servis mərkəzi" bölməsindəki sayın siyahıya bərabər olması
 
@@ -477,8 +491,8 @@ tags: stores
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/magazalar"
 * "Tab Servis merkezi" elementine klik et
-* "Tab Servis merkezi" elementin içinde "(3)" yazısı var
-* "Servis Merkezi Kartlari" elementlerinin sayı "3" olmalıdır
+* "Servis Merkezi Kartlari" elementlerinin sayı en az "1" olmalıdır
+* "xpath=//a[contains(@class,'branch-category') and contains(normalize-space(),'Servis mərkəzi') and contains(normalize-space(),concat('(',count(//ul[@id='serviceCenters']//a[contains(@class,'stores__offices__item')]),')'))]" elementlerinin sayı "1" olmalıdır
 
 ## TC-UI-STR-005 Bölmələr arasında keçid
 
