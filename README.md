@@ -14,8 +14,8 @@ Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-r
 ```bash
 mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (154 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
-mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (110 ssenari)
-mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (120 ssenari, known-bug daxil)
+mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (111 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (121 ssenari, known-bug daxil)
 ```
 
 > Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-api"`
@@ -52,14 +52,14 @@ Hər ssenarinin adı Excel-dəki test case ID-si ilə başlayır (məs. `TC-PAY-
 
 Xəta cavablarında `code` (mətn yox), `details` massivində hansı sahənin səhv olduğu və neçə xəta qayıtdığı; uğurlu cavablarda sahələrin dəyəri, formatı (regex) və tipi; uğursuz əməliyyatdan sonra isə datanın **dəyişmədiyi** (status, balans) ayrıca GET sorğusu ilə yoxlanılır.
 
-## UI testləri: 120 ssenari, 6 spec (irshad.az)
+## UI testləri: 121 ssenari, 6 spec (irshad.az)
 
 | Spec | Modul | Ssenari |
 |---|---|---|
 | `irshad_login_general` | Ümumi (HTTPS, URL), giriş səhifəsi | 11 |
 | `irshad_home_navigation` | Ana səhifə, header, menyu, breadcrumb, dil, footer, mağazalar | 36 |
 | `irshad_catalog` | Kateqoriya: brend/qiymət filtri, sıralama, məhsul kartı, məhsul səhifəsi | 30 |
-| `irshad_search` | Axtarış, uçdan-uca axın (axtarış → səbət → silmə) | 14 |
+| `irshad_search` | Axtarış, uçdan-uca axın (axtarış → səbət → silmə) | 15 |
 | `irshad_cart` | Səbət: əlavə, say, cəm, silmə, F5 | 13 |
 | `irshad_fav_compare` | Bəyəndiklərim və müqayisə | 16 |
 
@@ -72,7 +72,7 @@ Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokato
 | `known-bug` | Ssenari saytdakı **real bug-u** tutur və gözlənildiyi kimi fail olur: TC-UI-HOME-007 → BUG-UI-025, TC-UI-FLTB-004 → BUG-UI-026, TC-UI-FAV-005 → BUG-UI-027, TC-UI-CMP-001 → BUG-UI-029 (CMP-002 və CART-019 eyni bug səbəbindən Blocked), TC-UI-SRCH-019 → BUG-UI-011, TC-UI-FLTP-008 → BUG-UI-014, TC-UI-CMP-005 → BUG-UI-031 (arabir), TC-UI-SRCH-012 → BUG-UI-033 |
 | `backlog` | Hazırda istifadə olunmur. 12.10-da backlog-a atılan CMP-001/002, CART-019 15.10-da yoxlandı: səbəb lokator deyil, düymələrin saytda görünməməsi idi (BUG-UI-029) |
 
-Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 110 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
+Regression run `known-bug` (və `backlog`) ssenarilərini çıxarır — 111 ssenari. Bug düzələndə `known-bug` teqi götürülür və ssenari regression-a qayıdır.
 
 ### Stabillik
 
@@ -98,7 +98,7 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 | UI — regression-a əlavə edilən 11 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012, STR-008 | **11 / 11 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
 | UI regression (15.10, təkrar) | eyni əmr | **110 / 111** → CMP-005 arabir fail etdi; Gauge ekran şəkli saytın bug-ını göstərdi (**BUG-UI-031**), ssenari `known-bug`-a keçirildi — regression indi 110 ssenaridir | 20m |
 | **UI regression — yekun (15.10)** | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **110 / 110 Passed** (bir run-da, BUILD SUCCESS) | ~30m |
-| UI — review düzəlişlərindən sonra (15.10) | HOME-012, LANG-001/002/003 (hər biri 2 run), `irshad_home_navigation.spec` tam (NAV-005 yeni avtomat ssenari daxil) | **Passed** — məzmun yoxlamaları gücləndirildi: 404 yoxlaması, H1, məhsul kartları, breadcrumb sırası; SRCH-012 dublikat idi — sahənin dəyərini yoxlayır, BUG-UI-033 tapdı və known-bug oldu; regression 110 ssenari | — |
+| UI — review düzəlişlərindən sonra (15.10) | HOME-012, LANG-001/002/003 (hər biri 2 run), `irshad_home_navigation.spec` tam (NAV-005 yeni avtomat ssenari daxil) | **Passed** — məzmun yoxlamaları gücləndirildi: 404 yoxlaması, H1, məhsul kartları, breadcrumb sırası; SRCH-012 dublikat idi — sahənin dəyərini yoxlayır, BUG-UI-033 tapdı və known-bug oldu; SRCH-018 (XSS) avtomatlaşdırıldı — 2 yük, hadisə əsaslı onerror daxil; regression 111 ssenari | — |
 
 - **JSON schema validation:** 10 task-ın əsas ssenarilərində cavab `src/test/resources/schema/api-*.schema.json` ilə yoxlanılır (`Cavab "..." JSON schema-sına uyğun olmalıdır` step-i).
 - **Manual API icrası (CallMan):** collection və environment export-u `callman/` qovluğundadır; hər task qovluğu Collection Runner ilə icra olunub, assertion-lar keçib.

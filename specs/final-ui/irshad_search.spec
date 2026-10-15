@@ -122,6 +122,22 @@ Bug düzələndə known-bug teqi götürülür və ssenari regression-a qayıdı
 * "Axtaris Basligi" elementinin metni "qwxzqwxz üzrə axtarış heç bir nəticə vermədi" olmalıdır
 * "Siyahi Mehsul Kartlari" elementlerinin sayı "0" olmalıdır
 
+## TC-UI-SRCH-018 Axtarışda skript kodunun icra olunmaması (XSS yoxlaması)
+
+tags: search, negative, security
+
+Sorğu HTML kimi yox, mətn kimi göstərilməlidir. Skript icra olunsaydı, alert pəncərəsi açılar və növbəti addım UnhandledAlertException ilə yıxılardı.
+<script> teqi innerHTML ilə əlavə edildikdə brauzer onu icra etmir — ona görə ikinci, hadisə əsaslı (onerror) yük də yoxlanılır.
+
+* Brauzeri aç ve keçid et "https://irshad.az/az"
+* "Axtaris Input" elementine "<script>alert(1)</script>" yaz ve Enter düymesine bas
+* "Axtaris Basligi" elementin içinde "<script>alert(1)</script> üzrə axtarış" yazısı var
+* "xpath=//h1[@id='search-title']//script" sehifede mövcud olmamalıdır
+* "https://irshad.az/az" adresine keçid et
+* "Axtaris Input" elementine "<img src=x onerror=alert(1)>" yaz ve Enter düymesine bas
+* "Axtaris Basligi" elementin içinde "üzrə axtarış" yazısı var
+* "xpath=//img[@src='x']" sehifede mövcud olmamalıdır
+
 ## TC-UI-CART-020 Uçdan-uca axın: axtarış → məhsul → səbət → say → silmə
 
 tags: cart, e2e
