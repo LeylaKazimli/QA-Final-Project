@@ -15,7 +15,7 @@ Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-r
 mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (154 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
 mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (110 ssenari)
-mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (106 ssenari, bug-larla)
+mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (119 ssenari, known-bug daxil)
 ```
 
 > Windows PowerShell-də `-D...` parametrlərini dırnağa alın: `mvn test "-Dgauge.specs.dir=specs/final-api"`
@@ -52,15 +52,15 @@ Hər ssenarinin adı Excel-dəki test case ID-si ilə başlayır (məs. `TC-PAY-
 
 Xəta cavablarında `code` (mətn yox), `details` massivində hansı sahənin səhv olduğu və neçə xəta qayıtdığı; uğurlu cavablarda sahələrin dəyəri, formatı (regex) və tipi; uğursuz əməliyyatdan sonra isə datanın **dəyişmədiyi** (status, balans) ayrıca GET sorğusu ilə yoxlanılır.
 
-## UI testləri: 106 ssenari, 6 spec (irshad.az)
+## UI testləri: 119 ssenari, 6 spec (irshad.az)
 
 | Spec | Modul | Ssenari |
 |---|---|---|
-| `irshad_login_general` | Ümumi (HTTPS, URL), giriş səhifəsi | 10 |
-| `irshad_home_navigation` | Ana səhifə, header, menyu, breadcrumb, dil, footer, mağazalar | 31 |
-| `irshad_catalog` | Kateqoriya: brend/qiymət filtri, sıralama, məhsul kartı, məhsul səhifəsi | 26 |
-| `irshad_search` | Axtarış, uçdan-uca axın (axtarış → səbət → silmə) | 11 |
-| `irshad_cart` | Səbət: əlavə, say, cəm, silmə, F5 | 12 |
+| `irshad_login_general` | Ümumi (HTTPS, URL), giriş səhifəsi | 11 |
+| `irshad_home_navigation` | Ana səhifə, header, menyu, breadcrumb, dil, footer, mağazalar | 35 |
+| `irshad_catalog` | Kateqoriya: brend/qiymət filtri, sıralama, məhsul kartı, məhsul səhifəsi | 30 |
+| `irshad_search` | Axtarış, uçdan-uca axın (axtarış → səbət → silmə) | 14 |
+| `irshad_cart` | Səbət: əlavə, say, cəm, silmə, F5 | 13 |
 | `irshad_fav_compare` | Bəyəndiklərim və müqayisə | 16 |
 
 Ssenari adları Excel-dəki TC ID ilə başlayır (`TC-UI-CART-009` …). Lokatorlar `src/test/resources/locator/irshad-*.json` fayllarındadır; Java koduna dəyişiklik edilməyib.

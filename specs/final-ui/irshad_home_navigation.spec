@@ -276,6 +276,9 @@ tags: language
 * "Rus Dili Link" elementine klik et
 * URL "https://irshad.az/ru" içermelidir
 * Sehifede "Русский язык" yazısı olmalıdır
+* Sehifede "Корзина" yazısı olmalıdır
+* Sehifede "Личный кабинет" yazısı olmalıdır
+* Sehifede "Компания" yazısı olmalıdır
 
 ## TC-UI-LANG-002 Rus dilindən Azərbaycan dilinə geri keçid
 
@@ -288,6 +291,8 @@ tags: language
 * URL "https://irshad.az/az" içermelidir
 * Sehifede "Azərbaycan dili" yazısı olmalıdır
 * Sehifede "Kataloq" yazısı olmalıdır
+* Sehifede "Səbət" yazısı olmalıdır
+* Sehifede "Şəxsi kabinet" yazısı olmalıdır
 
 ## TC-UI-LANG-003 Kateqoriya səhifəsində dil dəyişəndə eyni kateqoriyada qalmaq
 
@@ -297,8 +302,9 @@ tags: language
 * "Dil Secici" elementinin üzerine gel
 * "Rus Dili Link" kliklene bilene qeder gözle
 * "Rus Dili Link" elementine klik et
-* URL "https://irshad.az/ru/" içermelidir
+* URL "/ru/telefony-i-aksesuary/mobilnye-telefony" içermelidir
 * "Breadcrumb Elementleri" elementlerinin sayı "3" olmalıdır
+* "Siyahi Mehsul Kartlari" elementlerinin sayı en az "1" olmalıdır
 
 ## TC-UI-FT-001 Footer bölmələrinin və linklərinin göstərilməsi
 
