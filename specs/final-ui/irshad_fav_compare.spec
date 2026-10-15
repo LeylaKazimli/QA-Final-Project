@@ -191,7 +191,10 @@ tags: compare
 
 ## TC-UI-CMP-005 Bütün məhsullar silinəndə boş vəziyyətə qayıtma (dolu → boş)
 
-tags: compare
+tags: compare, known-bug
+
+BUG-UI-031: sonuncu məhsul silinəndə sayt bəzən boş vəziyyət mesajı əvəzinə boş müqayisə cədvəlini (Kateqoriya: Telefon, Brend) göstərir — arabir baş verir.
+Ssenari gözlənilən davranışı yoxlayır; bug düzələndə known-bug teqi götürülür.
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/mehsullar/iphone-17-pro-1-tb-cosmic-orange-2"
 * "PDP Muqayise Ikonu" elementine klik et
@@ -201,7 +204,8 @@ tags: compare
 * "Muqayise B Sil" elementine klik et
 * "Muqayise B Basligi" yox olana qeder maksimum "60" saniye gözle
 * Sehifenin tam yüklenmesini gözle
-* Sehifede "Müqayisə etmək üçün məhsul əlavə olunmayıb" yazısı olmalıdır
+* "Bos Muqayise Mesaji" görsensin deye maksimum "60" saniye gözle
+* "Bos Muqayise Mesaji" görünür olmalıdır
 * "Muqayise Mehsul Basliqlari" elementlerinin sayı "0" olmalıdır
 
 ## TC-UI-CMP-006 Eyni məhsulun müqayisəyə iki dəfə əlavə edilməməsi

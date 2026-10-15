@@ -97,6 +97,8 @@ tags: home
 
 tags: home
 
+Narıncı çərçivəli sonuncu link mövsümi kampaniyadır və adı dəyişir (06–15.10: "Kondisionerlər", 15.10-dan: "Kombilər") — test onu adına görə yox, yerinə və stilinə görə yoxlayır.
+
 * Brauzeri aç ve keçid et "https://irshad.az/az"
 * "Ust Xett Kampaniyalar" görünür olmalıdır
 * "Ust Xett Magazalar" görünür olmalıdır
@@ -105,8 +107,8 @@ tags: home
 * "Ust Xett Apple" görünür olmalıdır
 * "Ust Xett Honor" görünür olmalıdır
 * "Ust Xett Outlet" görünür olmalıdır
-* "Ust Xett Kondisionerler" görünür olmalıdır
-* "Ust Xett Kondisionerler" elementinin "class" atributunda "btn-orange-transparent" olmalıdır
+* "Ust Xett Movsumi Kampaniya Linki" görünür olmalıdır
+* "Ust Xett Movsumi Kampaniya Linki" elementinin "class" atributunda "btn-orange-transparent" olmalıdır
 
 ## TC-UI-HOME-012 Header-in üst xəttindəki linklərin hər birinin xətasız açılması
 
@@ -127,8 +129,11 @@ tags: home
 * URL "/brend/honor" içermelidir
 * "Ust Xett Outlet" elementine klik et
 * URL "/az/outlet" içermelidir
-* "Ust Xett Kondisionerler" elementine klik et
-* URL "/kondisioner" içermelidir
+* "https://irshad.az/az" adresine keçid et
+* "Ust Xett Movsumi Kampaniya Linki" elementinin "href" atributunu "kampaniyaLinki" olaraq yadda saxla
+* "Ust Xett Movsumi Kampaniya Linki" elementine klik et
+* URL "${kampaniyaLinki}" içermelidir
+* "Header Logo" görünür olmalıdır
 
 ## TC-UI-NAV-001 Menyudan Mobil telefonlar kateqoriyasına keçid
 

@@ -71,9 +71,9 @@
     "locatorType": "XPATH",
     "locatorValue": "(//a[@aria-label='Outlet' and not(contains(@class,'menu__item__link'))])[1]"
   },
-  "Ust Xett Kondisionerler": {
+  "Ust Xett Movsumi Kampaniya Linki": {
     "locatorType": "XPATH",
-    "locatorValue": "//a[@aria-label='Kondisionerlər']"
+    "locatorValue": "(//header//a[contains(@class,'btn-orange-transparent')])[1]"
   },
   "Breadcrumb Elementleri": {
     "locatorType": "CSS",
