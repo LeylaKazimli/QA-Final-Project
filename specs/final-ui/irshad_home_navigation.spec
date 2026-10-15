@@ -162,7 +162,8 @@ tags: navigation, smoke
 * "Menyu Mobil telefonlar" kliklene bilene qeder gözle
 * "Menyu Mobil telefonlar" elementine klik et
 * URL "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar" olmalıdır
-* Sehifede "Mobil telefonlar" yazısı olmalıdır
+* "xpath=//h1[@id='search-title' and normalize-space()='Mobil telefonlar']" görünür olmalıdır
+* "Siyahi Mehsul Kartlari" elementlerinin sayı en az "1" olmalıdır
 
 ## TC-UI-NAV-002 Kateqoriya səhifəsində breadcrumb-ın düzgün göstərilməsi
 
@@ -173,6 +174,9 @@ tags: navigation
 * "Breadcrumb Irshad" görünür olmalıdır
 * "Breadcrumb Telefon ve aksesuarlar" görünür olmalıdır
 * "Breadcrumb Mobil telefonlar" görünür olmalıdır
+* "xpath=//ul[@class='breadcrumbs']/li[1]//a[@aria-label='İrşad']" görünür olmalıdır
+* "xpath=//ul[@class='breadcrumbs']/li[2]//a[normalize-space()='Telefon və aksesuarlar']" görünür olmalıdır
+* "xpath=//ul[@class='breadcrumbs']/li[3][normalize-space()='Mobil telefonlar']" görünür olmalıdır
 
 ## TC-UI-NAV-003 Breadcrumb-dakı ana kateqoriya linkinin işləməsi
 
@@ -181,7 +185,10 @@ tags: navigation
 * Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
 * "Breadcrumb Telefon ve aksesuarlar" elementine klik et
 * URL "https://irshad.az/az/telefon-ve-aksesuarlar" olmalıdır
-* Sehifede "Telefon və aksesuarlar" yazısı olmalıdır
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
+* "Breadcrumb Elementleri" elementlerinin sayı "2" olmalıdır
+* "xpath=//ul[@class='breadcrumbs']/li[2][normalize-space()='Telefon və aksesuarlar']" görünür olmalıdır
 
 ## TC-UI-NAV-004 Breadcrumb-ın birinci elementi ilə ana səhifəyə qayıtmaq
 
@@ -190,6 +197,14 @@ tags: navigation
 * Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
 * "Breadcrumb Irshad" elementine klik et
 * URL "https://irshad.az/az" olmalıdır
+
+## TC-UI-NAV-005 Breadcrumb-ın son elementinin (cari səhifə) link olmaması
+
+tags: navigation
+
+* Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar/mobil-telefonlar"
+* "xpath=//ul[@class='breadcrumbs']/li[last()][contains(@class,'breadcrumbs__current-page') and normalize-space()='Mobil telefonlar']" görünür olmalıdır
+* "xpath=//ul[@class='breadcrumbs']/li[last()]//a" sehifede mövcud olmamalıdır
 
 ## TC-UI-NAV-006 Məhsul səhifəsində breadcrumb-ın məhsulun kateqoriyasını göstərməsi
 
@@ -207,34 +222,49 @@ tags: navigation
 
 * Brauzeri aç ve keçid et "https://irshad.az/az/telefon-ve-aksesuarlar"
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/boyuk-meiset-texnikasi" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/kicik-meiset-texnikasi" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/tv-ve-audio" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/foto-texnika" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/notbuk-planset-ve-komputer-texnikasi" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/eve-uygun" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/mebeller-ve-tekstil" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/neqliyyat-ve-eylence" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/idman-ve-saglamliq" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/avtomobil-ucun-mehsullar" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/insaat-mehsullari" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/defterxana-levazimatlari" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/outlet" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 * "https://irshad.az/az/hediyye-kartlari" adresine keçid et
 * "Breadcrumb Elementleri" elementlerinin sayı en az "2" olmalıdır
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
 
 ## TC-UI-NAV-008 Outlet bölməsinin açılması
 
@@ -243,7 +273,9 @@ tags: navigation
 * Brauzeri aç ve keçid et "https://irshad.az/az"
 * "Ust Xett Outlet" elementine klik et
 * URL "https://irshad.az/az/outlet" olmalıdır
-* Sehifede "Outlet" yazısı olmalıdır
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
+* "Siyahi Mehsul Kartlari" elementlerinin sayı en az "1" olmalıdır
 
 ## TC-UI-NAV-009 Kampaniyalar səhifəsinin açılması
 
@@ -252,7 +284,9 @@ tags: navigation
 * Brauzeri aç ve keçid et "https://irshad.az/az"
 * "Ust Xett Kampaniyalar" elementine klik et
 * URL "https://irshad.az/az/kampaniyalar" olmalıdır
-* Sehifede "Kampaniyalar" yazısı olmalıdır
+* Sehifenin tam yüklenmesini gözle
+* "Sehife 404 Mesaji" sehifede mövcud olmamalıdır
+* "xpath=//a[contains(@href,'/az/kampaniyalar/') and not(ancestor::header) and not(ancestor::footer)]" elementlerinin sayı en az "1" olmalıdır
 
 ## TC-UI-NAV-010 Brauzerin "Geri" düyməsi ilə əvvəlki səhifəyə qayıtmaq
 
