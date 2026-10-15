@@ -77,6 +77,29 @@ Açar: "ab" + 6 rəqəm = 8 simvol.
 * Json cavabında "status" deyeri "SUCCESS" beraberdir
 * "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
 
+## TC-PAY-031 65 simvolluq Idempotency-Key ilə ödənişin rədd edilməsi (BVA: max+1)
+tags: api, regression, GRAD-302, idempotency, negative, bva
+
+Açar: 65 simvol (64-dən 1 çox).
+
+* "Max Acar Uzun" adlı "1000" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
+* "citynet" təchizatçısına "CN123456" nömrəsi ilə "10" AZN ödənişi "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" açarı ilə göndər
+* Status kodunun "400" olmalıdır
+* Json cavabında "code" deyeri "IDEMPOTENCY_KEY_INVALID" beraberdir
+* Kartın balansı "1000" olmalıdır
+* "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
+
+## TC-PAY-043 64 simvolluq Idempotency-Key ilə ödənişin keçməsi (BVA: max)
+tags: api, regression, GRAD-302, idempotency, positive, bva
+
+Açar: UUID (36 simvol) + "-max64-bva-" (11) + 17 "a" = 64 simvol.
+
+* "Max Acar" adlı "1000" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
+* "citynet" təchizatçısına "CN123456" nömrəsi ilə "10" AZN ödənişi "${random.uuid}-max64-bva-aaaaaaaaaaaaaaaaa" açarı ilə göndər
+* Status kodunun "201" olmalıdır
+* Json cavabında "status" deyeri "SUCCESS" beraberdir
+* "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
+
 ## TC-PAY-032 Uğursuz ödənişdən sonra eyni açarla düzəldilmiş ödənişin keçməsi
 tags: api, regression, GRAD-302, idempotency, positive
 

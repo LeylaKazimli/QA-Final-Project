@@ -12,7 +12,7 @@ QA Engineering kursunun bitirmə layihəsi. Müəllimin verdiyi Gauge arxitektur
 Tələblər: Java 11+, Maven, Gauge (`gauge install java`, `gauge install html-report`).
 
 ```bash
-mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (153 ssenari)
+mvn test -Dgauge.specs.dir=specs/final-api                    # bütün API testləri (154 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-api -Dtags=GRAD-302    # bir task-ın testləri
 mvn test -Dgauge.specs.dir=specs/final-ui "-Dtags=!known-bug & !backlog"   # UI regression (110 ssenari)
 mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testləri (106 ssenari, bug-larla)
@@ -22,7 +22,7 @@ mvn test -Dgauge.specs.dir=specs/final-ui                     # bütün UI testl
 
 Hesabat: `reports/html-report/index.html`
 
-## API testləri: 153 ssenari, 14 spec
+## API testləri: 154 ssenari, 14 spec
 
 | Epic | Task | Spec | Ssenari |
 |---|---|---|---|
@@ -89,11 +89,11 @@ Testlər **canlı saytda** işləyir. İstinad məhsullar: A = iPhone Air 256 GB
 - **Səbət və məhsul səhifəsi yoxlamaları nisbidir** — qiymət spec-ə yazılmır. Qiymət məhsul səhifəsindən oxunub yadda saxlanılır və səbətlə müqayisə edilir; cəm qaydalarla yoxlanılır (cəm = say × qiymət, cəm = sətirlərin cəmi, cəm = köhnə qiymət + endirim). Qiymət dəyişsə də bu testlər işləyir.
 - **Qiymət filtrinin sərhəd testləri (BVA: FLTP-002/003/004)** və A kartını tapmaq üçün istifadə olunan 2509–2510 aralığı test dizaynına görə konkret qiymətə bağlıdır (11–12.10.2026: A = 2509.99 AZN). Kampaniya zamanı (məs. 16–25.10) A-nın qiyməti dəyişərsə, `irshad_catalog.spec` başlığındakı sərhəd dəyərləri yenilənməlidir.
 
-### İcra nəticəsi (14–15.10.2026) — yekun: API 153/153, UI 110/110
+### İcra nəticəsi (14–15.10.2026) — yekun: API 154/154, UI 110/110
 
 | Hissə | Əmr | Nəticə | Müddət |
 |---|---|---|---|
-| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **153 / 153 Passed** (15.10, JSON schema validation daxil) | 6m58s |
+| API | `mvn test "-Dgauge.specs.dir=specs/final-api"` | **154 / 154 Passed** (15.10, JSON schema validation daxil) | 5m56s |
 | UI regression | `mvn test "-Dgauge.specs.dir=specs/final-ui" "-Dtags=!known-bug & !backlog"` | **100 / 100 Passed** (14.10, bir run-da, BUILD SUCCESS) | 1h00m |
 | UI — regression-a əlavə edilən 11 ssenari | NAV-011/012/013, SRCH-014/015, FLTB-007, FLTP-009/010, CART-005, LOGIN-012, STR-008 | **11 / 11 Passed** (15.10, ayrıca run-larda; hər biri ən azı 1–3 dəfə) | ~7m |
 | UI regression (15.10, təkrar) | eyni əmr | **110 / 111** → CMP-005 arabir fail etdi; Gauge ekran şəkli saytın bug-ını göstərdi (**BUG-UI-031**), ssenari `known-bug`-a keçirildi — regression indi 110 ssenaridir | 20m |

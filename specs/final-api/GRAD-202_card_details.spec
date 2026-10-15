@@ -44,7 +44,7 @@ tags: api, regression, GRAD-202, positive
 * "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
 
 ## TC-CARDG-002 Ödənişdən sonra kart balansının və bugünkü xərcin yenilənməsi
-tags: api, regression, GRAD-202, positive
+tags: api, regression, GRAD-202, positive, GRAD-302
 
 CityNet-ə 50 AZN ödəniş: komissiya 0.50, cəmi (total) 50.50 → balans 100 - 50.50 = 49.50.
 

@@ -43,3 +43,23 @@ tags: api, regression, GRAD-201, positive
 * Status kodunun "201" olmalıdır
 * Json cavabında "status" deyeri "ACTIVE" beraberdir
 * Json cavabında "id" deyeri "kart2" ile ferqlidir
+
+## TC-CARD-021 Dondurulmuş (FROZEN) kartın limitə sayılması: 4-cü kart açılmır
+tags: api, regression, GRAD-201, negative
+
+* "/auth/login" ünvanına "login-user1-card-limit3.json" ile login ol ve "token" tokenini yadda saxla
+* "Bir" adlı "10" AZN-lik kart aç və id-sini "kart1" olaraq yadda saxla
+* "Iki" adlı "10" AZN-lik kart aç və id-sini "kart2" olaraq yadda saxla
+* "Uc" adlı "10" AZN-lik kart aç və id-sini "kart3" olaraq yadda saxla
+* "${kart2}" kartını TEMPORARY səbəbi ilə dondur
+* Yeni API sorğusu hazırla
+* Authorization header-ine tokeni elave et
+* Body-ni cedvelden qur
+   |key          |value    |
+   |-------------|---------|
+   |accountId    |acc_002  |
+   |initialAmount|10       |
+   |label        |Dorduncu |
+* "POST" sorğusu gönder "/cards"
+* Status kodunun "422" olmalıdır
+* Json cavabında "code" deyeri "CARD_LIMIT_REACHED" beraberdir

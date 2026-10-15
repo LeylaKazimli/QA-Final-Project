@@ -267,7 +267,7 @@ tags: api, regression, GRAD-203, negative, auth
 * "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
 
 ## TC-CARDB-019 Dondurulmuş kartla ödəniş edilə bilməməsi
-tags: api, regression, GRAD-203, negative, state-transition
+tags: api, regression, GRAD-203, negative, state-transition, GRAD-302
 
 * "Donmus Odenis" adlı "100" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
 * "${cardId}" kartını TEMPORARY səbəbi ilə dondur

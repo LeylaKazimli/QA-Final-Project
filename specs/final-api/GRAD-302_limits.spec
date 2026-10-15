@@ -85,17 +85,6 @@ tags: api, regression, GRAD-302, limits, positive, bva
 * Kartın balansı "0" olmalıdır
 * "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
 
-## TC-PAY-040 Dondurulmuş kartla ödənişin rədd edilməsi
-tags: api, regression, GRAD-302, limits, negative
-
-* "Donmus Kart" adlı "100" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
-* "${cardId}" kartını TEMPORARY səbəbi ilə dondur
-* "azerisiq" təchizatçısına "1234567890" nömrəsi ilə "10" AZN ödəniş göndər
-* Status kodunun "422" olmalıdır
-* Json cavabında "code" deyeri "CARD_NOT_ACTIVE" beraberdir
-* Kartın balansı "100" olmalıdır
-* "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
-
 ## TC-PAY-041 USD kartla AZN təchizatçısına ödənişin rədd edilməsi
 tags: api, regression, GRAD-302, limits, negative
 

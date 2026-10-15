@@ -34,20 +34,6 @@ tags: api, regression, GRAD-302, positive, smoke
 * Header "Location" deyerinde "/bill-payments/${payId}" olmalıdır
 * "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
 
-## TC-PAY-002 Ödənişdən sonra kartdan komissiya ilə birlikdə (total) pul çıxılması
-tags: api, regression, GRAD-302, positive
-
-* "Total Cixilmasi" adlı "100" AZN-lik kart aç və id-sini "cardId" olaraq yadda saxla
-* "citynet" təchizatçısına "CN123456" nömrəsi ilə "50" AZN ödəniş göndər
-* Status kodunun "201" olmalıdır
-* Yeni API sorğusu hazırla
-* Authorization header-ine tokeni elave et
-* "GET" sorğusu gönder "/cards/${cardId}"
-* Status kodunun "200" olmalıdır
-* Json cavabında "availableBalance" deyeri "49.5" beraberdir
-* Json cavabında "spentToday" deyeri "50.5" beraberdir
-* "${cardId}" kartını təmizlik üçün LOST səbəbi ilə blokla
-
 ## TC-PAY-003 Hər uğurlu ödənişdə qəbz nömrəsinin 1 artması
 tags: api, regression, GRAD-302, positive
 
