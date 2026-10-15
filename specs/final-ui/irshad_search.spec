@@ -105,11 +105,15 @@ tags: smoke
 
 ## TC-UI-SRCH-012 Axtarış sorğusunun nəticə səhifəsində axtarış sahəsində qalması
 
-Gözlənilən nəticənin ikinci variantı yoxlanılır: sahə təmizlənir, sorğu nəticə başlığında göstərilir.
+tags: search, usability, known-bug
+
+BUG-UI-033: nəticə səhifəsində axtarış sahəsi təmizlənir — istifadəçi sorğunu düzəltmək üçün yenidən yazmalı olur.
+Bug düzələndə known-bug teqi götürülür və ssenari regression-a qayıdır.
 
 * Brauzeri aç ve keçid et "https://irshad.az/az"
 * "Axtaris Input" elementine "Samsung" yaz ve Enter düymesine bas
 * "Axtaris Basligi" elementin içinde "Samsung üzrə axtarış" yazısı var
+* "Axtaris Input" elementinin "value" atributu "Samsung" olmalıdır
 
 ## TC-UI-SRCH-013 Mövcud olmayan sözlə axtarışda "nəticə yoxdur" vəziyyəti
 
